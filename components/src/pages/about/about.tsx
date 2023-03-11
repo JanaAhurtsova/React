@@ -1,5 +1,5 @@
 import React from 'react';
-import GitHubLogo from '../../assets/github.svg';
+const GitHubLogo = new URL('../../../public/github.svg', import.meta.url).href;
 
 export default class AboutPage extends React.Component {
   render() {
