@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './style.module.css';
 const GitHubLogo = new URL('../../../public/github.svg', import.meta.url).href;
 
 export default class AboutPage extends React.Component {
@@ -15,10 +16,10 @@ export default class AboutPage extends React.Component {
             "It's easy to find the right music for every moment – on your phone, your computer, your tablet and more. So whether you're behind the wheel, working out, partying or relaxing, the right music is always at your fingertips."
           }
         </p>
-        <div className="contacts">
+        <div className={style.contacts}>
           <h3>Contact:</h3>
-          <a href="https://github.com/JanaAhurtsova">
-            <img src={GitHubLogo} alt="GitHub Logo" />
+          <a className={style.contact__link} href="https://github.com/JanaAhurtsova">
+            <img className={style.contact__icon} src={GitHubLogo} alt="GitHub Logo" />
             Jana Ahurtsova
           </a>
         </div>

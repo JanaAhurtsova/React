@@ -1,5 +1,5 @@
-type TSearchBar = {
-  search: string;
+type TSearchState = {
+  inputValue: string;
 };
 
-export default TSearchBar;
+export default TSearchState;

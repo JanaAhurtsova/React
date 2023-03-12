@@ -6,7 +6,7 @@ const data = [
     released: 2018,
     label: 'Fueled by Ramen',
     location: 'U.S.',
-    genre: ['pop rock', 'pop'],
+    genre: ['pop', 'pop rock'],
     cover:
       'https://e.snmc.io/i/600/w/b2c405fb03b07130a88984627c152eba/7145436/panic-at-the-disco-pray-for-the-wicked-Cover-Art.jpg',
   },
@@ -17,7 +17,7 @@ const data = [
     released: 2022,
     label: '',
     location: 'Sweden',
-    genre: ['alternative rock', 'alternative metal'],
+    genre: ['alternative rock'],
     cover:
       'https://t2.genius.com/unsafe/561x0/https%3A%2F%2Fimages.genius.com%2F5fb654ad0a6ae16d00f525b3a0cd7846.1000x1000x1.jpg',
   },
@@ -28,7 +28,7 @@ const data = [
     released: 2000,
     label: 'DreamWorks',
     location: 'U.S.',
-    genre: ['nu metal', 'rap rock', 'rap metal'],
+    genre: ['nu metal', 'rap rock'],
     cover:
       'https://i.discogs.com/tTypajs7ROvvwPkgyr1RSxtVgLxEt6_bVPPJwjSRwpk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3NDYx/MDUtMTU0MjczNjU4/MC05NjExLmpwZWc.jpeg',
   },
@@ -39,7 +39,7 @@ const data = [
     released: 2007,
     label: 'Warner Bros',
     location: 'U.S.',
-    genre: ['alternative rock', 'alternative metal'],
+    genre: ['alternative rock'],
     cover:
       'https://i.discogs.com/pAoaTeBCWGQKCU0_CvUvw8XEQnrQKa0E6058k9Hd-V0/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgyOTAy/NDItMTQ1ODczNzMy/Ny01MjM3LmpwZWc.jpeg',
   },
@@ -50,7 +50,7 @@ const data = [
     released: 2015,
     label: 'Prospect Park',
     location: 'U.S.',
-    genre: ['groove metal', 'alternative metal'],
+    genre: ['groove metal'],
     cover: 'https://m.media-amazon.com/images/I/61pqPiF03DL._UF1000,1000_QL80_.jpg',
   },
   {
@@ -60,7 +60,7 @@ const data = [
     released: 2007,
     label: 'Epic',
     location: 'U.S.',
-    genre: ['dance-punk', 'pop rock', 'pop punk'],
+    genre: ['pop rock', 'pop punk'],
     cover: 'https://m.media-amazon.com/images/I/61+1bDpRK4L._AC_SL1500_.jpg',
   },
   {
@@ -80,7 +80,7 @@ const data = [
     released: 2018,
     label: 'Comp Music',
     location: 'Ukraine',
-    genre: ['alternative rock', 'electronic rock'],
+    genre: ['alternative rock'],
     cover:
       'https://i.discogs.com/NYmgGseQ85r58PuOwBr4wUMpC8FhLCWI9o3e0K85guM/rs:fit/g:sm/q:90/h:547/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjgx/NDYxLTE1NTA2ODc4/MzktMTE4Ny5qcGVn.jpeg',
   },
@@ -101,7 +101,7 @@ const data = [
     released: 2013,
     label: 'Susy Records',
     location: 'Ukraine',
-    genre: ['indie rock', 'art rock', 'alternative rock'],
+    genre: ['indie rock', 'alternative rock'],
     cover: 'https://www.softlabirint.com/uploads/posts/2016-01/1452726588_001.softlabirint.com.jpg',
   },
   {
@@ -111,7 +111,7 @@ const data = [
     released: 2019,
     label: '',
     location: 'Belarus',
-    genre: ['indie rock', 'alternative rock', 'pop rock'],
+    genre: ['indie rock', 'alternative rock'],
     cover: 'https://f4.bcbits.com/img/a2340377659_10.jpg',
   },
   {
@@ -121,7 +121,7 @@ const data = [
     released: 2013,
     label: 'Soyuz Music',
     location: 'Belarus',
-    genre: ['ska punk', 'punk rock', 'rapcore'],
+    genre: ['punk rock', 'rapcore'],
     cover: 'https://static.mp3xa.cc/album_images/400x400/ljapis-trubeckojj-grajj.jpeg',
   },
 ];

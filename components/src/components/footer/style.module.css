@@ -1,0 +1,14 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 2rem;
+}
+
+.rss__link {
+  justify-self: flex-start;
+}
+
+.rss {
+  height: 2rem;
+  width: auto;
+}

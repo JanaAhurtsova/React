@@ -1,26 +1,33 @@
 import React from 'react';
+import Genre from './genre';
 import IData from './type';
+import Cover from './cover';
+import style from './style.module.css';
 
 export default class Card extends React.Component<IData> {
+  constructor(props: IData) {
+    super(props);
+  }
+
   render() {
     return (
-      <div className="card" id={String(this.props.id)}>
-        <img src={this.props.cover} alt={this.props.album + 'image'} />
-        <h3>{this.props.artist}</h3>
-        <h4>{this.props.album}</h4>
-        <div>
-          <span>{this.props.released}</span>
-          <span>{this.props.location}</span>
-          <span>{this.props.label}</span>
-        </div>
-        <div>
-          <>
+      <li className={style.card} id={String(this.props.id)}>
+        <Cover cover={this.props.cover} album={this.props.album} />
+        <div className={style.card__description}>
+          <h3>{this.props.artist}</h3>
+          <h4>{this.props.album}</h4>
+          <div className={style.info}>
+            <span>{this.props.released}</span>
+            <span>{this.props.location}</span>
+            <span>{this.props.label}</span>
+          </div>
+          <div className={style.genres}>
             {this.props.genre.map((genre) => {
-              <span>{genre}</span>;
+              return <Genre genre={genre} key={this.props.album + genre} />;
             })}
-          </>
+          </div>
         </div>
-      </div>
+      </li>
     );
   }
 }
