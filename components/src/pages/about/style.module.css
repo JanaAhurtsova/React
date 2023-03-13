@@ -13,4 +13,5 @@
 
 .contact__icon {
   height: 2rem;
+  filter: invert(1);
 }

@@ -11,4 +11,5 @@
 .rss {
   height: 2rem;
   width: auto;
+  filter: invert(1);
 }

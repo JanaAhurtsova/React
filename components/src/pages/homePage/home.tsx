@@ -7,7 +7,7 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <div className="container">
-        <SearchBar />
+        <SearchBar value={localStorage.getItem('inputValue') || ''} />
         <CardList cards={data} />
       </div>
     );

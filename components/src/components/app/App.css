@@ -6,6 +6,8 @@
   margin: 0 auto;
   text-align: center;
   gap: 1rem;
+  position: relative;
+  padding: 0 2rem;
 }
 
 .container {
@@ -14,6 +16,6 @@
   align-items: stretch;
   gap: 1rem;
   flex: auto;
-  padding: 1rem 2rem;
+  padding: 2rem 0;
   margin-top: 3rem;
 }

@@ -9,7 +9,8 @@ export default class AboutPage extends React.Component {
         <h1>About Us</h1>
         <h2>
           MUSIC COUNTS.<br></br>
-          TRACK, FIND AND REDISCOVER MUSIC.
+          <span className="active">TRACK</span>, <span className="active">FIND</span> AND{' '}
+          <span className="active">REDISCOVER</span> MUSIC.
         </h2>
         <p>
           {

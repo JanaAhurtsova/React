@@ -2,4 +2,8 @@ type TSearchState = {
   inputValue: string;
 };
 
-export default TSearchState;
+type TSearchProps = {
+  value: string;
+};
+
+export { TSearchState, TSearchProps };
