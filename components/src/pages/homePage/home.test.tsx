@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import HomePage from './home';
 import { MemoryRouter } from 'react-router-dom';
@@ -12,5 +11,6 @@ describe('Home page', () => {
     );
 
     expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getByText('Home')).toBeInTheDocument();
   });
 });
