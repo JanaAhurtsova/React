@@ -20,7 +20,7 @@ export default class SearchBar extends React.Component {
       <div>
         <input
           type="search"
-          placeholder="Search"
+          placeholder="Search..."
           autoComplete="off"
           onChange={this.inputHandler.bind(this)}
           value={this.state.inputValue}
