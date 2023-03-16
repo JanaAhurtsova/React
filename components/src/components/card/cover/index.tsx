@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.module.css';
+import style from './style.module.scss';
 import { TCover } from './type';
 
 export default class Cover extends React.Component<TCover> {

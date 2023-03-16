@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.module.css';
+import style from './style.module.scss';
 import { TGenre } from './type';
 
 export default class Genre extends React.Component<TGenre> {

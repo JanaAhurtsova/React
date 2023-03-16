@@ -2,16 +2,12 @@ import React from 'react';
 import Genre from './genre';
 import IData from './type';
 import Cover from './cover';
-import style from './style.module.css';
+import style from './style.module.scss';
 
 export default class Card extends React.Component<IData> {
-  constructor(props: IData) {
-    super(props);
-  }
-
   render() {
     return (
-      <li className={style.card} id={String(this.props.id)}>
+      <li className={style.card} key={String(this.props.id)}>
         <Cover cover={this.props.cover} album={this.props.album} />
         <div className={style.card__description}>
           <h3>{this.props.artist}</h3>

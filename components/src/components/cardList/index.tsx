@@ -1,20 +1,13 @@
 import React from 'react';
-import ICardList from './type';
 import Card from '../card/card';
-import style from './style.module.css';
+import style from './style.module.scss';
+import data from '../../data/data';
 
-export default class CardList extends React.Component<ICardList> {
-  constructor(props: ICardList) {
-    super(props);
-    this.state = {
-      cards: [],
-    };
-  }
-
+export default class CardList extends React.Component {
   render() {
     return (
       <ul className={style.card__list}>
-        {this.props.cards.map((item) => {
+        {data.map((item) => {
           return <Card {...item} key={item.id} />;
         })}
       </ul>

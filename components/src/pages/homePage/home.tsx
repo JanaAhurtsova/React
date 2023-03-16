@@ -1,15 +1,18 @@
 import React from 'react';
-import data from '../../data/data';
 import SearchBar from '../../components/search/searchBar';
 import CardList from '../../components/cardList';
+import Header from '../../components/header/header';
 
 export default class HomePage extends React.Component {
   render() {
     return (
-      <div className="container">
-        <SearchBar value={localStorage.getItem('inputValue') || ''} />
-        <CardList cards={data} />
-      </div>
+      <>
+        <Header title={'Home'} />
+        <div className="container">
+          <SearchBar />
+          <CardList />
+        </div>
+      </>
     );
   }
 }

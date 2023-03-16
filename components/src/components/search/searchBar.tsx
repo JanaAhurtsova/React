@@ -1,14 +1,11 @@
 import React, { ChangeEvent } from 'react';
-import style from './style.module.css';
-import { TSearchState, TSearchProps } from './type';
+import style from './style.module.scss';
+import TSearchState from './type';
 
-export default class SearchBar extends React.Component<TSearchProps, TSearchState> {
-  constructor(props: TSearchProps) {
-    super(props);
-    this.state = {
-      inputValue: localStorage.getItem('search') || '',
-    };
-  }
+export default class SearchBar extends React.Component {
+  state: TSearchState = {
+    inputValue: localStorage.getItem('search') || '',
+  };
 
   componentWillUnmount() {
     localStorage.setItem('search', this.state.inputValue);

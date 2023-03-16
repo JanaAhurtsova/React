@@ -6,11 +6,11 @@
   transition: .3s;
   cursor: pointer;
   background-color: white;
-}
 
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: rgba(169, 177, 221, 0.35) 0.5rem 0.5rem .4rem 0px;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(169, 177, 221, 0.35) 0.5rem 0.5rem .4rem 0px;
+  }
 }
 
 .card__description {
@@ -19,6 +19,12 @@
   gap: 1rem;
   padding: 0 .5rem 1rem;
   color: black;
+
+  @media(max-width: 550px) {
+
+    gap: .5rem;
+  
+  }
 }
 
 .genres,
@@ -26,12 +32,4 @@
   display: flex;
   justify-content: center;
   gap: .5rem;
-}
-
-@media(max-width: 550px) {
-
-  .card__description {
-    gap: .5rem;
-  }
-
 }
