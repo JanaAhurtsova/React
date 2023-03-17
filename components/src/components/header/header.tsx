@@ -15,6 +15,7 @@ export default class Header extends React.Component<THeaderProps> {
           <nav className={style.navigation}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/form">Form</NavLink>
           </nav>
         </div>
       </header>
