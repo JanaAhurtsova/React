@@ -1,5 +1,11 @@
 import ICardForm from '../cardForm/type';
 
-export default interface IForm {
+interface IFormProps {
   addCard: (card: ICardForm) => void;
 }
+
+interface IFormState {
+  isSubmitting: boolean;
+}
+
+export { IFormProps, IFormState };

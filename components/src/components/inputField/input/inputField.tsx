@@ -7,7 +7,13 @@ export default class InputField extends React.Component<IInputField> {
     return (
       <div className={style.input__wrapper}>
         <label>{this.props.label}</label>
-        <input className={style.input} {...this.props} />
+        <input
+          className={style.input}
+          type={this.props.type}
+          name={this.props.name}
+          placeholder={this.props.placeholder}
+          ref={this.props.forwardedRef}
+        />
         <span className="error">{this.props.error}</span>
       </div>
     );

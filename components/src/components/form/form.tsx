@@ -1,51 +1,62 @@
 import React, { FormEvent } from 'react';
+import Checkbox from '../inputField/checkbox/checkbox';
 import InputField from '../inputField/input/inputField';
 import Radio from '../inputField/radio/radio';
 import Select from '../inputField/select/select';
 import style from './style.module.scss';
-import IForm from './type';
+import { IFormProps, IFormState } from './type';
 
-const countries = [
-  'Choose Country',
-  'Belarus',
-  'Ukraine',
-  'Russia',
-  'Germany',
-  'Poland',
-  'Lithuania',
-  'Latvia',
-  'Georgia',
-  'Greece',
-  'Uzbekistan',
-  'Italy',
-  'Estonia',
-  'Serbia',
+const genres = [
+  { value: 'Choose a Genre', hidden: true },
+  { value: 'Rock' },
+  { value: 'Pop' },
+  { value: 'Punk' },
+  { value: 'Jazz' },
+  { value: 'Classic' },
+  { value: 'Country' },
+  { value: 'Hip Hop' },
+  { value: 'Metal' },
+  { value: 'Electronic' },
+  { value: 'Blues' },
+  { value: 'Techno' },
+  { value: 'Reggae' },
 ];
 
-export default class Form extends React.Component<IForm> {
+export default class Form extends React.Component<IFormProps, IFormState> {
   form: React.RefObject<HTMLFormElement>;
-  inputNameRef: React.RefObject<InputField>;
-  inputDateRef: React.RefObject<InputField>;
-  inputMaleRef: React.RefObject<Radio>;
-  inputFemaleRef: React.RefObject<Radio>;
-  selectRef: React.RefObject<Select>;
-  inputFileRef: React.RefObject<InputField>;
+  inputNameRef: React.RefObject<HTMLInputElement>;
+  inputDateRef: React.RefObject<HTMLInputElement>;
+  inputBandRef: React.RefObject<HTMLInputElement>;
+  inputSingerRef: React.RefObject<HTMLInputElement>;
+  selectRef: React.RefObject<HTMLSelectElement>;
+  inputFileRef: React.RefObject<HTMLInputElement>;
   inputCheckboxRef: React.RefObject<HTMLInputElement>;
 
-  constructor(props: IForm) {
+  constructor(props: IFormProps) {
     super(props);
     this.form = React.createRef();
     this.inputNameRef = React.createRef();
     this.inputDateRef = React.createRef();
-    this.inputMaleRef = React.createRef();
-    this.inputFemaleRef = React.createRef();
+    this.inputBandRef = React.createRef();
+    this.inputSingerRef = React.createRef();
     this.selectRef = React.createRef();
     this.inputFileRef = React.createRef();
     this.inputCheckboxRef = React.createRef();
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      isSubmitting: false,
+    };
   }
 
   handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (this.inputFileRef.current) {
+      if (this.inputFileRef.current.files) {
+        // const file = URL.createObjectURL(this.inputFileRef.current.files[0]) || '';
+        // console.log(file);
+      }
+    }
+    console.log(this.selectRef.current?.value);
   }
 
   render() {
@@ -57,58 +68,50 @@ export default class Form extends React.Component<IForm> {
               label="Name:"
               type="text"
               name="name"
-              placeholder="Enter Your Name"
+              placeholder="Enter Name"
               error=""
-              ref={this.inputNameRef}
+              forwardedRef={this.inputNameRef}
             />
             <InputField
-              label="Date of Birth:"
+              label="Release:"
               type="date"
               name="date"
-              placeholder="Enter Your Birthday"
+              placeholder="Enter Date of Release"
               error=""
-              ref={this.inputDateRef}
+              forwardedRef={this.inputDateRef}
             />
             <div className={style.radios}>
-              <label>Gender:</label>
+              <label>Artist:</label>
               <div className={style.radio}>
-                <Radio label="Male" name="gender" ref={this.inputMaleRef} />
-                <Radio label="Female" name="gender" ref={this.inputFemaleRef} />
+                <Radio label="Band" name="gender" forwardedRef={this.inputBandRef} />
+                <Radio label="Singer" name="gender" forwardedRef={this.inputSingerRef} />
               </div>
               <span className="error"></span>
             </div>
           </div>
           <div className={style.selected}>
             <Select
-              title={'Select Country:'}
-              defaultValue={countries[0]}
-              countries={countries}
+              title="Select Genre:"
+              defaultValue={genres[0].value}
+              genres={genres}
               error=""
-              ref={this.selectRef}
+              forwardedRef={this.selectRef}
             />
             <InputField
               label="Upload Image:"
               type="file"
               name="file"
               error=""
-              ref={this.inputFileRef}
+              forwardedRef={this.inputFileRef}
             />
           </div>
         </div>
-        <div className={style.confirm}>
-          <div>
-            <input
-              className={style.checkbox}
-              type="checkbox"
-              name="file"
-              ref={this.inputCheckboxRef}
-            />
-            <label className={style.checkbox__label}>
-              I confirm that my details are complete and correct
-            </label>
-          </div>
-          <span className="error"></span>
-        </div>
+        <Checkbox
+          label="I confirm that my details are complete and correct"
+          name="checkbox"
+          forwardedRef={this.inputCheckboxRef}
+          error=""
+        />
         <div className={style.buttons}>
           <button className={style.submit}>Submit</button>
           <button className={style.reset}>Reset</button>

@@ -1,7 +1,8 @@
 export default interface IInputField {
   label: string;
   type: string;
-  placeholder?: string;
   name: string;
+  placeholder?: string;
+  forwardedRef: React.RefObject<HTMLInputElement>;
   error: string;
 }

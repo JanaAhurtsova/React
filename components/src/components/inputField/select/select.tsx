@@ -7,9 +7,17 @@ export default class Select extends React.Component<TOptions> {
     return (
       <div className={style.select__wrapper}>
         <label>{this.props.title}</label>
-        <select className={style.select} defaultValue={this.props.defaultValue}>
-          {this.props.countries.map((country) => {
-            return <option key={country}>{country}</option>;
+        <select
+          className={style.select}
+          defaultValue={this.props.defaultValue}
+          ref={this.props.forwardedRef}
+        >
+          {this.props.genres.map((genre) => {
+            return (
+              <option key={genre.value} value={genre.value} hidden={genre.hidden}>
+                {genre.value}
+              </option>
+            );
           })}
         </select>
         <span className="error">{this.props.error}</span>
