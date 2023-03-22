@@ -1,0 +1,66 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 30rem;
+  width: 60%;
+  border: .1rem solid #b1b0b0;
+  border-radius: .3rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+.information {
+  display: flex;
+  gap: 1rem;
+}
+
+.selected,
+.person {
+  width: 100%;
+}
+
+.radios {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+}
+
+.radio {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.submit,
+.reset {
+  padding: .4rem;
+  width: 20%;
+  color: white;
+}
+
+.checkbox {
+  width: .7rem;
+  height: .7rem;
+  margin-right: .5rem;
+}
+
+.checkbox__label {
+  font-size: .8rem;
+  color: #b1b0b0
+}
+
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+}

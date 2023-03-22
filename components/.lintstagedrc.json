@@ -1,11 +1,6 @@
 {
-  "*.(ts|tsx)": [
-    "prettier --write",
-    "eslint"
+  "**/*.(ts|tsx)": [
+    "npm run lint-fix"
   ],
-  "*.html": [
-    "eslint",
-    "prettier --write"
-  ],
-  "*.scss": "prettier --write"
+  "**/*.scss": "prettier --write"
 }

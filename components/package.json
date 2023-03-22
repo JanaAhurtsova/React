@@ -10,7 +10,8 @@
     "lint": "eslint src",
     "lint-fix": "npx eslint --ext js,jsx,ts,tsx ./src --fix",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",

@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from 'react-router-dom';
 import Layout from '../components/layout/layout';
 import HomePage from '../pages/homePage/home';
 import AboutPage from '../pages/about/about';
@@ -11,7 +11,8 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} />
       <Route path="about" element={<AboutPage />} />
       <Route path="form" element={<FormPage />} />
-      <Route path="*" element={<NotFoundPage />} />
+      <Route path="404" element={<NotFoundPage />} />
+      <Route path="*" element={<Navigate to="404" replace />} />
     </Route>
   )
 );

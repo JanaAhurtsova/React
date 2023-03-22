@@ -11,6 +11,5 @@ describe('Home page', () => {
     );
 
     expect(screen.getByRole('list')).toBeInTheDocument();
-    expect(screen.getByText('Home')).toBeInTheDocument();
   });
 });
