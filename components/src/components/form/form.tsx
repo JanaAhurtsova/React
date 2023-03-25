@@ -34,19 +34,19 @@ export default class Form extends React.Component<IFormProps, IFormState> {
     };
   }
 
-  resetForm(event: FormEvent<HTMLFormElement>) {
+  resetForm(event: FormEvent<HTMLButtonElement>) {
     event.preventDefault();
     if (this.form.current) {
       this.form.current.reset();
     }
   }
 
-  handleSubmit(event: FormEvent<HTMLFormElement>) {
+  handleSubmit(event: FormEvent<HTMLButtonElement>) {
     event.preventDefault();
     this.validate(event);
   }
 
-  validate(event: FormEvent<HTMLFormElement>) {
+  validate(event: FormEvent<HTMLButtonElement>) {
     this.setState({ errors: {} });
     if (
       this.inputNameRef.current &&
@@ -107,21 +107,24 @@ export default class Form extends React.Component<IFormProps, IFormState> {
       this.setState({ errors: errors });
 
       if (!Object.keys(errors).length) {
-        this.props.addCard({
-          name: name,
-          date: release,
-          genre: genre,
-          img: image,
-          artist: artist(),
-        });
-        this.resetForm(event);
+        this.props.showModal();
+        setTimeout(() => {
+          this.props.addCard({
+            name: name,
+            date: release,
+            genre: genre,
+            img: image,
+            artist: artist(),
+          });
+          this.resetForm(event);
+        }, 3000);
       }
     }
   }
 
   render() {
     return (
-      <form className={style.form} onSubmit={this.handleSubmit} ref={this.form}>
+      <form className={style.form} ref={this.form}>
         <div className={style.information}>
           <div className={style.person}>
             <InputField
@@ -179,7 +182,12 @@ export default class Form extends React.Component<IFormProps, IFormState> {
           error={this.state.errors.checkbox}
         />
         <div className={style.buttons}>
-          <button className={style.submit}>Submit</button>
+          <button className={style.submit} onClick={this.handleSubmit}>
+            Submit
+          </button>
+          <button className={style.submit} onClick={this.resetForm}>
+            Reset
+          </button>
         </div>
       </form>
     );

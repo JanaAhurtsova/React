@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
+
 const RssLogo = new URL('../../../public/rs_school_js.svg', import.meta.url).href;
 
 export default class Footer extends React.Component {
