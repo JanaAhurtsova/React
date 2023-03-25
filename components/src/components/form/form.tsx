@@ -5,22 +5,7 @@ import Radio from '../inputField/radio/radio';
 import Select from '../inputField/select/select';
 import style from './style.module.scss';
 import { IFormProps, IFormState } from './type';
-
-const genres = [
-  { value: 'Choose a Genre', hidden: true },
-  { value: 'Rock' },
-  { value: 'Pop' },
-  { value: 'Punk' },
-  { value: 'Jazz' },
-  { value: 'Classic' },
-  { value: 'Country' },
-  { value: 'Hip Hop' },
-  { value: 'Metal' },
-  { value: 'Electronic' },
-  { value: 'Blues' },
-  { value: 'Techno' },
-  { value: 'Reggae' },
-];
+import genres from '../../data/genres';
 
 export default class Form extends React.Component<IFormProps, IFormState> {
   form: React.RefObject<HTMLFormElement>;
@@ -43,20 +28,95 @@ export default class Form extends React.Component<IFormProps, IFormState> {
     this.inputFileRef = React.createRef();
     this.inputCheckboxRef = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetForm = this.resetForm.bind(this);
     this.state = {
-      isSubmitting: false,
+      errors: {},
     };
+  }
+
+  resetForm(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (this.form.current) {
+      this.form.current.reset();
+    }
   }
 
   handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (this.inputFileRef.current) {
-      if (this.inputFileRef.current.files) {
-        // const file = URL.createObjectURL(this.inputFileRef.current.files[0]) || '';
-        // console.log(file);
+    this.validate(event);
+  }
+
+  validate(event: FormEvent<HTMLFormElement>) {
+    this.setState({ errors: {} });
+    if (
+      this.inputNameRef.current &&
+      this.inputDateRef.current &&
+      this.selectRef.current &&
+      this.inputFileRef.current &&
+      this.inputCheckboxRef.current &&
+      this.inputBandRef.current &&
+      this.inputSingerRef.current
+    ) {
+      const errors = {} as typeof this.state.errors;
+      const name = this.inputNameRef.current.value;
+      const release = this.inputDateRef.current.value;
+      const genre = this.selectRef.current.value;
+      const file =
+        this.inputFileRef.current.files && this.inputFileRef.current.files.length
+          ? this.inputFileRef.current.files[0]
+          : '';
+      const image = file ? URL.createObjectURL(file) : '';
+      const band = this.inputBandRef.current;
+      const singer = this.inputSingerRef.current;
+      const artist = () => {
+        if (band.checked) {
+          return band.value;
+        } else if (singer.checked) {
+          return singer.value;
+        } else {
+          return '';
+        }
+      };
+      const confirm = this.inputCheckboxRef.current.checked;
+
+      if (!name.trim()) {
+        errors.name = '*Name cannot be blank';
+      }
+      if (!release) {
+        errors.date = '*No date chosen';
+      }
+      if (release && Date.parse(release) > Date.now()) {
+        errors.date = '*This date has not yet come';
+      }
+      if (!artist()) {
+        errors.artist = '*No artist chosen';
+      }
+      if (genre === 'Choose a Genre') {
+        errors.genre = '*No genre chosen';
+      }
+      if (!confirm) {
+        errors.checkbox = '*Information must be confirm';
+      }
+      if (!file) {
+        errors.img = '*No file chosen';
+      }
+      if (file && !file.type.startsWith('image/')) {
+        errors.img = "*Upload file isn't an image";
+      }
+
+      this.setState({ errors: errors });
+
+      if (!Object.keys(errors).length) {
+        this.props.addCard({
+          name: name,
+          date: release,
+          genre: genre,
+          img: image,
+          artist: artist(),
+        });
+        this.resetForm(event);
       }
     }
-    console.log(this.selectRef.current?.value);
   }
 
   render() {
@@ -69,7 +129,7 @@ export default class Form extends React.Component<IFormProps, IFormState> {
               type="text"
               name="name"
               placeholder="Enter Name"
-              error=""
+              error={this.state.errors.name}
               forwardedRef={this.inputNameRef}
             />
             <InputField
@@ -77,16 +137,21 @@ export default class Form extends React.Component<IFormProps, IFormState> {
               type="date"
               name="date"
               placeholder="Enter Date of Release"
-              error=""
+              error={this.state.errors.date}
               forwardedRef={this.inputDateRef}
             />
             <div className={style.radios}>
               <label>Artist:</label>
               <div className={style.radio}>
-                <Radio label="Band" name="gender" forwardedRef={this.inputBandRef} />
-                <Radio label="Singer" name="gender" forwardedRef={this.inputSingerRef} />
+                <Radio label="Band" value="Band" name="artist" forwardedRef={this.inputBandRef} />
+                <Radio
+                  label="Singer"
+                  value="Singer"
+                  name="artist"
+                  forwardedRef={this.inputSingerRef}
+                />
               </div>
-              <span className="error"></span>
+              <span className="error">{this.state.errors.artist}</span>
             </div>
           </div>
           <div className={style.selected}>
@@ -94,14 +159,15 @@ export default class Form extends React.Component<IFormProps, IFormState> {
               title="Select Genre:"
               defaultValue={genres[0].value}
               genres={genres}
-              error=""
+              error={this.state.errors.genre}
               forwardedRef={this.selectRef}
             />
             <InputField
               label="Upload Image:"
               type="file"
               name="file"
-              error=""
+              accept="image/*"
+              error={this.state.errors.img}
               forwardedRef={this.inputFileRef}
             />
           </div>
@@ -110,11 +176,10 @@ export default class Form extends React.Component<IFormProps, IFormState> {
           label="I confirm that my details are complete and correct"
           name="checkbox"
           forwardedRef={this.inputCheckboxRef}
-          error=""
+          error={this.state.errors.checkbox}
         />
         <div className={style.buttons}>
           <button className={style.submit}>Submit</button>
-          <button className={style.reset}>Reset</button>
         </div>
       </form>
     );

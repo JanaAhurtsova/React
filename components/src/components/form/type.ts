@@ -5,7 +5,16 @@ interface IFormProps {
 }
 
 interface IFormState {
-  isSubmitting: boolean;
+  errors: Partial<TError>;
 }
+
+type TError = {
+  name: string;
+  img: string;
+  date: string;
+  genre: string;
+  artist: string;
+  checkbox: string;
+};
 
 export { IFormProps, IFormState };

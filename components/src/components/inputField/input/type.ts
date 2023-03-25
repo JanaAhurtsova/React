@@ -4,5 +4,6 @@ export default interface IInputField {
   name: string;
   placeholder?: string;
   forwardedRef: React.RefObject<HTMLInputElement>;
-  error: string;
+  error: string | undefined;
+  accept?: string;
 }

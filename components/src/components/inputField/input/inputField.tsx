@@ -12,6 +12,7 @@ export default class InputField extends React.Component<IInputField> {
           type={this.props.type}
           name={this.props.name}
           placeholder={this.props.placeholder}
+          accept={this.props.accept}
           ref={this.props.forwardedRef}
         />
         <span className="error">{this.props.error}</span>

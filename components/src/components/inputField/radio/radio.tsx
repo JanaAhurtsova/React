@@ -10,6 +10,7 @@ export default class Radio extends React.Component<IRadio> {
           className={style.input}
           type="radio"
           name={this.props.name}
+          value={this.props.label}
           ref={this.props.forwardedRef}
         />
         <label>{this.props.label}</label>
