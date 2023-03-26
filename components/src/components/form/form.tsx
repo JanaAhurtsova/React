@@ -64,7 +64,7 @@ export default class Form extends React.Component<IFormProps, IFormState> {
       const file =
         this.inputFileRef.current.files && this.inputFileRef.current.files.length
           ? this.inputFileRef.current.files[0]
-          : '';
+          : null;
       const image = file ? URL.createObjectURL(file) : '';
       const band = this.inputBandRef.current;
       const singer = this.inputSingerRef.current;
@@ -107,17 +107,16 @@ export default class Form extends React.Component<IFormProps, IFormState> {
       this.setState({ errors: errors });
 
       if (!Object.keys(errors).length) {
-        this.props.showModal();
+        this.props.addCard({
+          name: name,
+          date: release,
+          genre: genre,
+          img: image,
+          artist: artist(),
+        });
         setTimeout(() => {
-          this.props.addCard({
-            name: name,
-            date: release,
-            genre: genre,
-            img: image,
-            artist: artist(),
-          });
           this.resetForm(event);
-        }, 3000);
+        }, 2600);
       }
     }
   }

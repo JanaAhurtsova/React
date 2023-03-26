@@ -13,25 +13,23 @@ export default class FormPage extends React.Component<object, IFormPage> {
       cards: [],
       showModal: false,
     };
-    this.showModal = this.showModal.bind(this);
   }
 
   componentDidUpdate() {
     if (this.state.showModal) {
       setTimeout(() => {
         this.setState({ showModal: false });
-      }, 3000);
+      }, 2500);
     }
   }
 
-  showModal() {
-    this.setState({ showModal: true });
-  }
-
   addCard(card: ICardForm) {
-    this.setState((prevState: IFormPage) => ({
-      cards: [...prevState.cards, card],
-    }));
+    this.setState({ showModal: true });
+    setTimeout(() => {
+      this.setState((prevState: IFormPage) => ({
+        cards: [...prevState.cards, card],
+      }));
+    }, 2600);
   }
 
   render() {
@@ -39,7 +37,7 @@ export default class FormPage extends React.Component<object, IFormPage> {
       <>
         <Header title={'Form'} />
         <div className="container">
-          <Form addCard={(card: ICardForm) => this.addCard(card)} showModal={this.showModal} />
+          <Form addCard={(card: ICardForm) => this.addCard(card)} />
           <CardListForm cards={this.state.cards} />
           {this.state.showModal && <Modal />}
         </div>

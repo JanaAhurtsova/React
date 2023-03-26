@@ -2,7 +2,6 @@ import ICardForm from '../cardForm/type';
 
 interface IFormProps {
   addCard: (card: ICardForm) => void;
-  showModal: () => void;
 }
 
 interface IFormState {
