@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Cover from '.';
+import { Cover } from '.';
 
 const data = {
   cover: 'https://m.media-amazon.com/images/I/61pqPiF03DL._UF1000,1000_QL80_.jpg',

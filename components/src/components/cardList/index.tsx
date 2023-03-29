@@ -1,16 +1,14 @@
 import React from 'react';
-import Card from '../card/card';
+import { Card } from '../card';
 import style from './style.module.scss';
-import data from '../../data/data';
+import data from '../../data/cards/index.json';
 
-export default class CardList extends React.Component {
-  render() {
-    return (
-      <ul className={style.card__list}>
-        {data.map((item) => {
-          return <Card {...item} key={item.id} />;
-        })}
-      </ul>
-    );
-  }
-}
+export const CardList: React.FC = () => {
+  return (
+    <ul className={style.card__list}>
+      {data.map((item) => {
+        return <Card {...item} key={item.id} />;
+      })}
+    </ul>
+  );
+};

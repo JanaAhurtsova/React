@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Card from './card';
+import { Card } from '.';
 
 const data = {
   id: 1,

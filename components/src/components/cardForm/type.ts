@@ -1,7 +1,7 @@
 export default interface ICardForm {
-  img: string;
+  image: string;
   name: string;
-  date: string;
+  release: string;
   genre: string;
   artist: string;
 }

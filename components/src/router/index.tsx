@@ -1,9 +1,9 @@
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from 'react-router-dom';
-import Layout from '../components/layout/layout';
-import HomePage from '../pages/homePage/home';
-import AboutPage from '../pages/about/about';
-import NotFoundPage from '../pages/404/404';
-import FormPage from '../pages/form/formPage';
+import { Layout } from '../components/layout';
+import { HomePage } from '../pages/homePage';
+import { AboutPage } from '../pages/about';
+import { NotFoundPage } from '../pages/404';
+import FormPage from '../pages/form';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

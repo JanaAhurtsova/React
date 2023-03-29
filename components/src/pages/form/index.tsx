@@ -1,10 +1,10 @@
-import Header from '../../components/header/header';
+import { Header } from '../../components/header';
 import React from 'react';
-import Form from '../../components/form/form';
-import CardListForm from '../../components/cardListForm/cardListForm';
+import { Form } from '../../components/form';
+import { CardListForm } from '../../components/cardListForm';
 import ICardForm from '../../components/cardForm/type';
 import IFormPage from './type';
-import Modal from '../../components/modal/modal';
+import { Modal } from '../../components/modal';
 
 export default class FormPage extends React.Component<object, IFormPage> {
   constructor(props: object) {
@@ -17,19 +17,21 @@ export default class FormPage extends React.Component<object, IFormPage> {
 
   componentDidUpdate() {
     if (this.state.showModal) {
+      const modalShowTime = 2500;
       setTimeout(() => {
         this.setState({ showModal: false });
-      }, 2500);
+      }, modalShowTime);
     }
   }
 
   addCard(card: ICardForm) {
     this.setState({ showModal: true });
+    const delayedTimeToShowCard = 2600;
     setTimeout(() => {
       this.setState((prevState: IFormPage) => ({
         cards: [...prevState.cards, card],
       }));
-    }, 2600);
+    }, delayedTimeToShowCard);
   }
 
   render() {

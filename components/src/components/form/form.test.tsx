@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Form from './form';
+import Form from '.';
 
 describe('Form component', () => {
   it('render component', () => {
@@ -10,7 +10,7 @@ describe('Form component', () => {
     expect(screen.getByRole('combobox')).toBeInTheDocument();
   });
 
-  it('all fields are empty', () => {
+  it('render errors when all fields are empty', () => {
     const mockFn = vi.fn();
     render(<Form addCard={mockFn} />);
 
@@ -37,7 +37,7 @@ describe('Form component', () => {
     expect(screen.getAllByRole('radio')[1]).not.toHaveAttribute('checked');
   });
 
-  it('invalid date', () => {
+  it('should check invalid date when date has not yet come', () => {
     const mockFn = vi.fn();
     const { container } = render(<Form addCard={mockFn} />);
 
@@ -50,7 +50,7 @@ describe('Form component', () => {
     expect(screen.getByText(/This date has not yet come/i)).toBeInTheDocument();
   });
 
-  it('invalid file format upload', () => {
+  it('should check invalid file format upload', () => {
     const mockFn = vi.fn();
     const { container } = render(<Form addCard={mockFn} />);
     const mockPdf = new File(['test'], 'test.pdf', { type: 'application/pdf' });
