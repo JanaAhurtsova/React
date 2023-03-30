@@ -40,62 +40,60 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
   };
 
   return (
-    <div className={style.form__wrapper}>
-      <form id="MyForm" className={style.form} onSubmit={handleSubmit(onSubmit)}>
-        <div className={style.information}>
-          <div className={style.person}>
-            <InputField
-              label="Name:"
-              type="text"
-              name="name"
-              placeholder="Enter Name"
-              error={errors.name}
-              register={register}
-            />
-            <InputField
-              label="Release:"
-              type="date"
-              name="release"
-              placeholder="Enter Date of Release"
-              error={errors.release}
-              register={register}
-            />
-            <Radio artists={artists} error={errors.artist} name="artist" register={register} />
-          </div>
-          <div className={style.selected}>
-            <Select
-              label="Select Genre:"
-              defaultValue={genres[0]}
-              genre="genre"
-              genres={genres}
-              error={errors.genre}
-              register={register}
-            />
-            <InputField
-              label="Upload Image:"
-              type="file"
-              name="file"
-              accept="image/*"
-              error={errors.file}
-              register={register}
-            />
-          </div>
+    <form id="form" className={style.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={style.information}>
+        <div className={style.person}>
+          <InputField
+            label="Name:"
+            type="text"
+            name="name"
+            placeholder="Enter Name"
+            error={errors.name}
+            register={register}
+          />
+          <InputField
+            label="Release:"
+            type="date"
+            name="release"
+            placeholder="Enter Date of Release"
+            error={errors.release}
+            register={register}
+          />
+          <Radio artists={artists} error={errors.artist} name="artist" register={register} />
         </div>
-        <Checkbox
-          label="I confirm that my details are complete and correct"
-          name="confirm"
-          register={register}
-          error={errors.confirm}
-        />
-      </form>
+        <div className={style.selected}>
+          <Select
+            label="Select Genre:"
+            defaultValue={genres[0]}
+            genre="genre"
+            genres={genres}
+            error={errors.genre}
+            register={register}
+          />
+          <InputField
+            label="Upload Image:"
+            type="file"
+            name="file"
+            accept="image/*"
+            error={errors.file}
+            register={register}
+          />
+        </div>
+      </div>
+      <Checkbox
+        label="I confirm that my details are complete and correct"
+        name="confirm"
+        register={register}
+        error={errors.confirm}
+      />
       <div className={style.buttons}>
-        <button className={style.submit} form="MyForm">
+        <button type="submit" className={style.submit}>
           Submit
         </button>
-        <button className={style.submit} form="MyForm" onClick={resetForm.bind(this)}>
+        <button className={style.submit} onClick={resetForm.bind(this)}>
           Reset
         </button>
       </div>
-    </div>
+    </form>
   );
 };

@@ -3,7 +3,7 @@ import { Layout } from '../components/layout';
 import { HomePage } from '../pages/homePage';
 import { AboutPage } from '../pages/about';
 import { NotFoundPage } from '../pages/404';
-import FormPage from '../pages/form';
+import { FormPage } from '../pages/form';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
