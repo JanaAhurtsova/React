@@ -1,32 +1,32 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.scss';
-import TSearchState from './type';
 
-export default class SearchBar extends React.Component {
-  state: TSearchState = {
-    inputValue: localStorage.getItem('search') || '',
+export const SearchBar: React.FC = () => {
+  const [value, searchState] = useState<string>(localStorage.getItem('search') || '');
+  const valueRef = useRef(value);
+
+  const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    searchState(event.target.value);
+    valueRef.current = value;
   };
 
-  componentWillUnmount() {
-    localStorage.setItem('search', this.state.inputValue);
-  }
+  useEffect(() => {
+    searchState(localStorage.getItem('search') || '');
+    return () => {
+      localStorage.setItem('search', valueRef.current);
+    };
+  }, []);
 
-  inputHandler(event: ChangeEvent<HTMLInputElement>) {
-    return this.setState({ inputValue: event.target.value });
-  }
-
-  render() {
-    return (
-      <div>
-        <input
-          type="search"
-          placeholder="Search..."
-          autoComplete="off"
-          onChange={this.inputHandler.bind(this)}
-          value={this.state.inputValue}
-          className={style.search}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <input
+        type="search"
+        placeholder="Search..."
+        autoComplete="off"
+        onChange={inputHandler}
+        value={value}
+        className={style.search}
+      />
+    </div>
+  );
+};

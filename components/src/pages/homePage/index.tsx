@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../../components/search';
+import { SearchBar } from '../../components/search';
 import { CardList } from '../../components/cardList';
 import { Header } from '../../components/header';
 

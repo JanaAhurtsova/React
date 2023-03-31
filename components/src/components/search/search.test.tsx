@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import SearchBar from '.';
+import { SearchBar } from '.';
 
 type TStore = {
   [key: string]: string;
