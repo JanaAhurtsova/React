@@ -4,7 +4,7 @@ import { IFormValues, TError } from '../type';
 import { SelectElement } from '../../../managers/hiddenElement';
 import { Type } from './enum';
 
-export const MyResolver: Resolver<IFormValues> = async (values) => {
+export const resolver: Resolver<IFormValues> = async (values) => {
   const handleValues = (values: IFormValues) => {
     const file = values.file ? values.file[0] : null;
     const image = file ? URL.createObjectURL(file) : '';
