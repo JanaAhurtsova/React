@@ -1,6 +1,6 @@
 import React from 'react';
 import ICardForm from './type';
-import style from './/style.module.scss';
+import style from './style.module.scss';
 
 export const CardForm: React.FC<ICardForm> = ({ image, name, artist, release, genre }) => {
   return (

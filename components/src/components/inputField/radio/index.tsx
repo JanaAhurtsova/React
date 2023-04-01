@@ -7,9 +7,9 @@ export const Radio: React.FC<IRadio> = ({ register, name, error, artists }) => {
     <div className={style.radios}>
       <label>Artist:</label>
       <div className={style.radio}>
-        {artists.map((artist, i) => {
+        {artists.map((artist) => {
           return (
-            <div key={artist + i}>
+            <div key={artist}>
               <input className={style.input} type="radio" value={artist} {...register(name)} />
               <label>{artist}</label>
             </div>

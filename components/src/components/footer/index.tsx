@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-
-const RssLogo = new URL('../../../public/rs_school_js.svg', import.meta.url).href;
+import { RssLogo } from '../../managers/images';
 
 export const Footer: React.FC = () => {
   return (

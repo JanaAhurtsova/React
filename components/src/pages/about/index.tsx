@@ -1,7 +1,7 @@
 import { Header } from '../../components/header';
 import React from 'react';
 import style from './style.module.scss';
-const GitHubLogo = new URL('../../../public/github.svg', import.meta.url).href;
+import { GitHubLogo } from '../../managers/images';
 
 export const AboutPage: React.FC = () => {
   return (

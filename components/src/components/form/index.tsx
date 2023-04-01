@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useMemo } from 'react';
 import { Checkbox } from '../inputField/checkbox';
 import { InputField } from '../inputField/input';
 import { Radio } from '../inputField/radio';
@@ -7,11 +7,16 @@ import style from './style.module.scss';
 import { IFormProps, IFormValues } from './type';
 import { genres } from '../../data/genres';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { resolver } from './resolver';
+import { MyResolver } from './resolver';
 import ICardForm from '../cardForm/type';
 import { artists } from '../../data/artists';
+import { DelayedResetTime } from '../../managers/timers';
 
 export const Form: React.FC<IFormProps> = ({ addCard }) => {
+  const resolver = useMemo(() => {
+    return MyResolver;
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -27,10 +32,9 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
     if (!Object.keys(errors).length) {
       addCard(card);
 
-      const delayedResetTime = 2600;
       setTimeout(() => {
         reset();
-      }, delayedResetTime);
+      }, DelayedResetTime);
     }
   };
 

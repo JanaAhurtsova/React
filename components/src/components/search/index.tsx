@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.scss';
-import { Storage, searchBar } from '../../managers/localStorageManager';
+import { Storage, Search } from '../../managers/localStorageManager';
 
 export const SearchBar: React.FC = () => {
-  const [value, searchState] = useState<string>(Storage.getValue(searchBar, ''));
+  const [value, searchState] = useState<string>(Storage.getValue(Search, ''));
   const valueRef = useRef(value);
 
   const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +16,7 @@ export const SearchBar: React.FC = () => {
 
   useEffect(() => {
     return () => {
-      Storage.setValue(searchBar, valueRef.current);
+      Storage.setValue(Search, valueRef.current);
     };
   }, []);
 

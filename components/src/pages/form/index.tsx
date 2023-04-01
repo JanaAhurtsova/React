@@ -4,6 +4,7 @@ import { Form } from '../../components/form';
 import { CardListForm } from '../../components/cardListForm';
 import ICardForm from '../../components/cardForm/type';
 import { Modal } from '../../components/modal';
+import { DelayedTimeToShowCard } from '../../managers/timers';
 
 export const FormPage: React.FC = () => {
   const [cards, cardsState] = useState<ICardForm[]>([]);
@@ -20,10 +21,9 @@ export const FormPage: React.FC = () => {
 
   const addCard = (card: ICardForm) => {
     modalState(true);
-    const delayedTimeToShowCard = 2600;
     setTimeout(() => {
       cardsState([...cards, card]);
-    }, delayedTimeToShowCard);
+    }, DelayedTimeToShowCard);
   };
 
   return (

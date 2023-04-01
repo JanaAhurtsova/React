@@ -6,8 +6,8 @@ import style from './style.module.scss';
 export const CardListForm: React.FC<ICardListForm> = (props: ICardListForm) => {
   return (
     <section className={style.card__list}>
-      {props.cards.map((card, ind) => {
-        return <CardForm {...card} key={card.name + ind} />;
+      {props.cards.map((card, index) => {
+        return <CardForm {...card} key={card.name + index} />;
       })}
     </section>
   );

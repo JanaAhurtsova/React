@@ -1,6 +1,6 @@
 import { TValue } from './type';
 
-export const searchBar = 'search';
+export const Search = 'search';
 
 export class Storage {
   public static setValue(key: string, value: TValue) {
