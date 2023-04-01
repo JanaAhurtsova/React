@@ -1,19 +1,22 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.scss';
+import { Storage, searchBar } from '../../managers/localStorageManager';
 
 export const SearchBar: React.FC = () => {
-  const [value, searchState] = useState<string>(localStorage.getItem('search') || '');
+  const [value, searchState] = useState<string>(Storage.getValue(searchBar, ''));
   const valueRef = useRef(value);
 
   const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
     searchState(event.target.value);
-    valueRef.current = value;
   };
 
   useEffect(() => {
-    searchState(localStorage.getItem('search') || '');
+    valueRef.current = value;
+  }, [value]);
+
+  useEffect(() => {
     return () => {
-      localStorage.setItem('search', valueRef.current);
+      Storage.setValue(searchBar, valueRef.current);
     };
   }, []);
 
@@ -26,6 +29,7 @@ export const SearchBar: React.FC = () => {
         onChange={inputHandler}
         value={value}
         className={style.search}
+        autoFocus={true}
       />
     </div>
   );
