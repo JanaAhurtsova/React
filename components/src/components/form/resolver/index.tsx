@@ -2,6 +2,7 @@ import { Resolver } from 'react-hook-form';
 import { errorsText } from '../../../data/errors';
 import { IFormValues, TError } from '../type';
 import { SelectElement } from '../../../managers/hiddenElement';
+import { Type } from './enum';
 
 export const MyResolver: Resolver<IFormValues> = async (values) => {
   const handleValues = (values: IFormValues) => {
@@ -12,7 +13,7 @@ export const MyResolver: Resolver<IFormValues> = async (values) => {
   };
 
   const generateError = (message: string) => ({
-    type: 'required',
+    type: Type.REQUIRED,
     message,
   });
 
@@ -41,7 +42,7 @@ export const MyResolver: Resolver<IFormValues> = async (values) => {
     if (!file) {
       errors.file = generateError(errorsText.file);
     }
-    if (file && !file.type.startsWith('image/')) {
+    if (file && !file.type.startsWith(Type.IMAGE)) {
       errors.file = generateError(errorsText.fileFormat);
     }
 
