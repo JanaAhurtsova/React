@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.scss';
 import { Storage, Search } from '../../managers/localStorageManager';
 
@@ -20,8 +20,12 @@ export const SearchBar: React.FC = () => {
     };
   }, []);
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
         type="search"
         placeholder="Search..."
@@ -31,6 +35,9 @@ export const SearchBar: React.FC = () => {
         className={style.search}
         autoFocus={true}
       />
-    </div>
+      <button className={style.submit} type="submit">
+        Submit
+      </button>
+    </form>
   );
 };

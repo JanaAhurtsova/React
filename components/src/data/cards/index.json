@@ -7,7 +7,8 @@
     "label": "Fueled by Ramen",
     "location": "U.S.",
     "genre": ["pop", "pop rock"],
-    "cover": "https://e.snmc.io/i/600/w/b2c405fb03b07130a88984627c152eba/7145436/panic-at-the-disco-pray-for-the-wicked-Cover-Art.jpg"
+    "cover": "https://e.snmc.io/i/600/w/b2c405fb03b07130a88984627c152eba/7145436/panic-at-the-disco-pray-for-the-wicked-Cover-Art.jpg",
+    "profile": "American rock band from Las Vegas, Nevada. US. Formed in 2004, became a Brendon Urie solo project in 2015 before 'becoming no more' on January 24th 2023."
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "label": "",
     "location": "Sweden",
     "genre": ["alternative rock"],
-    "cover": "https://t2.genius.com/unsafe/561x0/https%3A%2F%2Fimages.genius.com%2F5fb654ad0a6ae16d00f525b3a0cd7846.1000x1000x1.jpg"
+    "cover": "https://t2.genius.com/unsafe/561x0/https%3A%2F%2Fimages.genius.com%2F5fb654ad0a6ae16d00f525b3a0cd7846.1000x1000x1.jpg",
+    "profile": "Alternative Rock Band from Sweden."
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "label": "DreamWorks",
     "location": "U.S.",
     "genre": ["nu metal", "rap rock"],
-    "cover": "https://i.discogs.com/tTypajs7ROvvwPkgyr1RSxtVgLxEt6_bVPPJwjSRwpk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3NDYx/MDUtMTU0MjczNjU4/MC05NjExLmpwZWc.jpeg"
+    "cover": "https://i.discogs.com/tTypajs7ROvvwPkgyr1RSxtVgLxEt6_bVPPJwjSRwpk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3NDYx/MDUtMTU0MjczNjU4/MC05NjExLmpwZWc.jpeg",
+    "profile": "Papa Roach is an American rock band from Vacaville, California. Formed in 1993, their first major-label release was the triple-platinum album Infest (2000). The group's success continued with their gold album Lovehatetragedy (2002), their platinum album Getting Away with Murder (2004), The Paramour Sessions (2006), Metamorphosis (2009), Time for Annihilation (2010), The Connection (2012), and F.E.A.R. (2015). Papa Roach has sold more than 20 million album copies worldwide and are known for their songs \"Last Resort\", \"Between Angels and Insects\", \"She Loves Me Not\", \"Getting Away with Murder\", \"Scars\", \"Lifeline\" and \"Face Everything and Rise\"."
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "label": "Warner Bros",
     "location": "U.S.",
     "genre": ["alternative rock"],
-    "cover": "https://i.discogs.com/pAoaTeBCWGQKCU0_CvUvw8XEQnrQKa0E6058k9Hd-V0/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgyOTAy/NDItMTQ1ODczNzMy/Ny01MjM3LmpwZWc.jpeg"
+    "cover": "https://i.discogs.com/pAoaTeBCWGQKCU0_CvUvw8XEQnrQKa0E6058k9Hd-V0/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgyOTAy/NDItMTQ1ODczNzMy/Ny01MjM3LmpwZWc.jpeg",
+    "profile": "Alternative/Modern Rock band from Agoura Hills, California. Linkin Park are one of the most popular bands of the so called \"nü-metal\" movement, along with Limp Bizkit, Korn and several others. Their sound is a wide range of influences, including metal, alternate rock, hip-hop, electronica and industrial. Linkin Park's debut album \"Hybrid Theory\" was a multi-platinum smash worldwide, selling over 30 million copies, 12 million of them in the US alone. Reanimation is the correspondent remix album. Formed as Xero (5) in the winter of 1995/96, the band was renamed to Hybrid Theory in 1999. They were signed as a developing artist to Warner Bros. Records in late 1999, but the label advised them to change their name to avoid confusion with Hybrid, a popular House music group. Looking for a new name, Hybrid Theory briefly considered \"Lotus Foundation Project\" and \"Plear\", before settling on \"Linkin Park\" in May 2000. This name was suggested by Chester Bennington after seeing a street sign for the park named \"Lincoln Park\" in Los Angeles. The spelling was changed to \"Linkin Park\" to acquire the internet domain \"linkinpark.com\". Frontman Chester Bennington died from suicide on July 20, 2017."
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "label": "Prospect Park",
     "location": "U.S.",
     "genre": ["groove metal"],
-    "cover": "https://m.media-amazon.com/images/I/61pqPiF03DL._UF1000,1000_QL80_.jpg"
+    "cover": "https://m.media-amazon.com/images/I/61pqPiF03DL._UF1000,1000_QL80_.jpg",
+    "profile": "Heavy metal band from Las Vegas, Nevada, USA. Formed in 2005."
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "label": "Epic",
     "location": "U.S.",
     "genre": ["pop rock", "pop punk"],
-    "cover": "https://m.media-amazon.com/images/I/61+1bDpRK4L._AC_SL1500_.jpg"
+    "cover": "https://m.media-amazon.com/images/I/61+1bDpRK4L._AC_SL1500_.jpg",
+    "profile": "Pop punk band from Waldorf, MD, USA. Formed 1996-2011 2015-present"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "label": "RCA",
     "location": "U.S.",
     "genre": ["pop"],
-    "cover": "https://m.media-amazon.com/images/I/81a66iIiZeL._AC_SL1500_.jpg"
+    "cover": "https://m.media-amazon.com/images/I/81a66iIiZeL._AC_SL1500_.jpg",
+    "profile": "American singer, songwriter, dancer, and actress, born September 8, 1979 in Doylestown, Pennsylvania, USA. She is married to Carey Hart. She got her stage name from her rosy complexion, and the Steve Buscemi character 'Mr. Pink', from the movie 'Reservoir Dogs'."
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "label": "Comp Music",
     "location": "Ukraine",
     "genre": ["alternative rock"],
-    "cover": "https://i.discogs.com/NYmgGseQ85r58PuOwBr4wUMpC8FhLCWI9o3e0K85guM/rs:fit/g:sm/q:90/h:547/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjgx/NDYxLTE1NTA2ODc4/MzktMTE4Ny5qcGVn.jpeg"
+    "cover": "https://i.discogs.com/NYmgGseQ85r58PuOwBr4wUMpC8FhLCWI9o3e0K85guM/rs:fit/g:sm/q:90/h:547/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjgx/NDYxLTE1NTA2ODc4/MzktMTE4Ny5qcGVn.jpeg",
+    "profile": "The Hardkiss is a Ukrainian rock band. The Hardkiss participated in the Ukrainian national selection for the Eurovision Song Contest 2016 with the song \"Helpless\". The band placed 2nd in the national final."
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "label": "Kapkan Records",
     "location": "Russia",
     "genre": ["alternative rock"],
-    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/92ca2474012548aec84e5f3db1b7121d.jpg"
+    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/92ca2474012548aec84e5f3db1b7121d.jpg",
+    "profile": "Alternative rock band from Russia, founded in 2000."
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@
     "label": "Susy Records",
     "location": "Ukraine",
     "genre": ["indie rock", "alternative rock"],
-    "cover": "https://www.softlabirint.com/uploads/posts/2016-01/1452726588_001.softlabirint.com.jpg"
+    "cover": "https://www.softlabirint.com/uploads/posts/2016-01/1452726588_001.softlabirint.com.jpg",
+    "profile": "Ukrainian pop-rock band, founded 1994 in Lviv (Ukraine). One of the most popular ukrainian rock bands ever."
   },
   {
     "id": 11,
@@ -107,7 +117,8 @@
     "label": "",
     "location": "Belarus",
     "genre": ["indie rock", "alternative rock"],
-    "cover": "https://f4.bcbits.com/img/a2340377659_10.jpg"
+    "cover": "https://f4.bcbits.com/img/a2340377659_10.jpg",
+    "profile": "Rock band from Mogilev, Belarus, founded in 2008."
   },
   {
     "id": 12,
@@ -117,6 +128,139 @@
     "label": "Soyuz Music",
     "location": "Belarus",
     "genre": ["punk rock", "rapcore"],
-    "cover": "https://static.mp3xa.cc/album_images/400x400/ljapis-trubeckojj-grajj.jpeg"
+    "cover": "https://static.mp3xa.cc/album_images/400x400/ljapis-trubeckojj-grajj.jpeg",
+    "profile": "Liapis Trubetskoy (Russian: Ляпис Трубецкой) was a Belarusian rock group formed in Minsk in 1990. Disbanded in 2014."
+  },
+  {
+    "id": 13,
+    "artist": "Limp Bizkit",
+    "album": "Significant Demos In The Hell",
+    "released": 2001,
+    "label": "Wonder Boy Records",
+    "location": "U.S.",
+    "genre": ["rock", "non-music"],
+    "cover": "https://i.discogs.com/0sKAyA05w5-zdXU183sS_bsAzXsUnMsYP_nEPiWouWk/rs:fit/g:sm/q:90/h:480/w:480/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0MjU3/ODMtMTI4MzM3MzQw/Ni5qcGVn.jpeg",
+    "profile": " Rap-Rock / Nu-Metal (Modern Rock) band from Jacksonville, Florida (USA). Limp Bizkit formed in 1994 under the name \"Limp Biscut\". In 1996 they changed the spelling of the name to \"Limp Bizkut\", and again later that year to \"Limp Bizkit\" (though some concert flyers would continue to credit them as \"Limp Bizkut\" well into late 1997). Their work is marked by Durst's abrasive, angry lyrics and Borland's sonic experimentation and elaborate visual appearance, which includes face and body paint, masks and uniforms, as well as the band's elaborate live shows."
+  },
+  {
+    "id": 14,
+    "artist": "Nickelback",
+    "album": "The Long Road",
+    "released": 2003,
+    "label": "Roadrunner Records",
+    "location": "Canada",
+    "genre": ["rock"],
+    "cover": "https://i.discogs.com/BtA9YoSxzDeo5ZsSn0yCOklke0VJSl7ypyleV4I5tg8/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzUx/OTUtMTMzMzY1NDIz/NS5qcGVn.jpeg",
+    "profile": "Alternative rock band from Hanna, Alberta (Canada). The band was formed in 1995. The band having sold almost 50 million albums worldwide, ranking as the 11th best selling music act of the 2000s, and is the 2nd best selling foreign act in the U.S. behind The Beatles for the 2000's."
+  },
+  {
+    "id": 15,
+    "artist": "Adele",
+    "album": "25",
+    "released": 2015,
+    "label": "",
+    "location": "UK",
+    "genre": ["blues", "pop", "func"],
+    "cover": "https://i.discogs.com/8Q90AEv3raXlfTkfbVMMeQOGrEEwC5Cq8rB9-jUapkI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDgw/NTgtMTUwMDYzNjk4/Mi04Mjc5LmpwZWc.jpeg",
+    "profile": "British Singer. Born May 5, 1988 in London, England, United Kingdom. Real Name: Adele Laurie Blue Adkins"
+  },
+  {
+    "id": 16,
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "released": 1991,
+    "label": "DGC Records",
+    "location": "U.S",
+    "genre": ["rock", "grunge"],
+    "cover": "https://i.discogs.com/XoAXkLe03Vk0Kt-oQqw7V9uW5nBzQdNvZd0zar5mOiQ/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NzA4/NC0xMjYzMDk1NTUz/LmpwZWc.jpeg",
+    "profile": "Rock band from Aberdeen, Washington, USA, formed in 1987. Emerging from the Seattle grunge scene of the late 1980s/early 1990s, Nirvana was a power trio of musicians who brought a new aesthetic to the rock scene of the time. They had already released their debut LP \"Bleach\" with Sub Pop, but their 1991 major-label debut for DGC/Geffen Records, \"Nevermind\" broke the band and grunge into the mainstream of America. Singer/guitarist Kurt Cobain's death by suicide in April 1994 brought the band to an end. There were two other short-used band names before Nirvana: Throat Oyster and Windowpane."
+  },
+  {
+    "id": 17,
+    "artist": "Foo Fighters",
+    "album": "Sonic Highways",
+    "released": 2014,
+    "label": "",
+    "location": "U.S",
+    "genre": ["rock"],
+    "cover": "https://i.discogs.com/6S9o1KPvuFRJylCMzBpaN22RdDQlSPt0iI4slhx60k4/rs:fit/g:sm/q:90/h:537/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYyMDI5/MjEtMTQxNTY2Nzk2/NS0yMzc5LmpwZWc.jpeg",
+    "profile": "Alternative Rock band from Seattle, Washington, USA. Formed 1994, originally a one-man-band created by Dave Grohl in 1994-1995."
+  },
+  {
+    "id": 18,
+    "artist": "Fall out Boy",
+    "album": "Save Rock And Roll",
+    "released": 2013,
+    "label": "Island Records",
+    "location": "U.S",
+    "genre": ["rock", "indie rock"],
+    "cover": "https://i.discogs.com/L4tM3nY6Si27JeBfhbjzeSq4H5UxyEkj2xyd9TwtH5g/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ0ODQ4/OTItMTM2NjIzODk5/My0xNjcxLmpwZWc.jpeg",
+    "profile": "Pop punk band from Chicago, US. Formed 2001-2009 and reformed 2013"
+  },
+  {
+    "id": 19,
+    "artist": "Порнофильмы",
+    "album": "Это пройдёт",
+    "released": 2020,
+    "label": "Союз",
+    "location": "Russia",
+    "genre": ["punk"],
+    "cover": "https://i.discogs.com/DCfLhoWCvIymg_8SDy_fKpkfI1g8h5sGTzx1YV8dx6E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTA4/NDYzLTE1ODM4Njk4/OTItNTUwNC5qcGVn.jpeg",
+    "profile": "Rock band from Dubna, Russia, founded in 2008."
+  },
+  {
+    "id": 20,
+    "artist": "O.Torvald",
+    "album": "#нашілюдивсюди",
+    "released": 2016,
+    "label": "United Music Group",
+    "location": "Ukraine",
+    "genre": ["rock"],
+    "cover": "https://i.discogs.com/s7M-LZ6m5uxTvu0wX6qof-9oEt7HH8eTWdnkLTYjjJM/rs:fit/g:sm/q:90/h:546/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxNjA0/MTEtMTQ4NTY5OTMz/My05OTM3LmpwZWc.jpeg",
+    "profile": "O.Torvald (Оторвальд) is an ukrainian rock band formed in 2005."
+  },
+  {
+    "id": 21,
+    "artist": "Backstreet Boys",
+    "album": "Backstreet Boys",
+    "released": 1996,
+    "label": "Jive",
+    "location": "U.S",
+    "genre": ["pop"],
+    "cover": "https://i.discogs.com/jhdmClzU8HebzR9CkeaH-bI-G_sBLJ-i0HdWSG_dqXQ/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQyOTIz/MS0xMzEwOTIwMDA2/LmpwZWc.jpeg",
+    "profile": "American boy band formed on April 20, 1993 in Orlando, Florida. One half of the boy band supergroup NKOTBSB. They have participated in the following charity projects: Hand In Hand For Children e.V. (1996), Bravo All Stars (1998) and All Star Tribute (2001)."
+  },
+  {
+    "id": 22,
+    "artist": "Hollywood Undead",
+    "album": "Day Of The Dead",
+    "released": 2015,
+    "label": "Interscope Records",
+    "location": "U.S",
+    "genre": ["rock", "hip hop"],
+    "cover": "https://i.discogs.com/tBQVFVEyabpv9RtCWTOSwCLrCmgshYzmeLAga2BpK28/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY4MDc4/NTItMTQyNzA0NjUz/MS05MjI3LmpwZWc.jpeg",
+    "profile": "American rap rock band from Los Angeles, California, formed in 2005."
+  },
+  {
+    "id": 23,
+    "artist": "HIM",
+    "album": "Razorblade Romance",
+    "released": 1999,
+    "label": "Terrier Records",
+    "location": "Finland",
+    "genre": ["rock"],
+    "cover": "https://i.discogs.com/VGTH3qsGTFYvcNosj9v7LzhtnJiIMrwaJYKCVimJk90/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU0ODM5/Ni0xNTQ3NjQxMTA1/LTM4MTcuanBlZw.jpeg",
+    "profile": "HIM (originally His Infernal Majesty (2)) was a Finnish rock band founded in 1991 by singer/frontman Ville Valo and bass player Migé Amour. Their first release was the demo EP 666 Ways To Love: Prologue, which was released in 1996 and is the only thing they released under their original name. By the time they released their debut full-length Greatest Love Songs Vol. 666 in 1997, the name had been shortened to HIM to make their name easier on the Finnish tongue as well as to tone down the more occult elements of their public image. With their second album, Razorblade Romance, HIM gained exposure all over Europe as the track \"Join Me\" was included in the European version of the movie The Thirteenth Floor. Their fourth album, Love Metal, expanded their popularity to the U.S., giving them the status of world-wide rock stars. The album Dark Light spawned the hit \"Wings of a Butterfly\", which became the band's biggest US hit and made Dark Light the first album by a Finnish act to go gold in the US. The band disbanded in 2017."
+  },
+  {
+    "id": 24,
+    "artist": "Akute",
+    "album": "Płastyka",
+    "released": 2016,
+    "label": "",
+    "location": "Belarus",
+    "genre": ["rock", "post rock"],
+    "cover": "https://i.discogs.com/WfUZbTXDqZ2bLbxBnsGaQjjMP4e4orVNFJOHZxMnR0A/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwMDc0/MDkzLTE1MzIwNjcx/MjgtNDk0OC5qcGVn.jpeg",
+    "profile": "Rock band from Mogilev, Belarus, founded in 2008."
   }
 ]

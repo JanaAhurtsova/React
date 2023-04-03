@@ -7,4 +7,5 @@ export default interface IData {
   location: string;
   genre: string[];
   cover: string;
+  profile: string;
 }
