@@ -18,7 +18,7 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<IFormValues>({ resolver });
+  } = useForm<IFormValues>({ resolver, mode: 'onSubmit', reValidateMode: 'onSubmit' });
 
   const onSubmit: SubmitHandler<IFormValues | ICardForm> = (card) => {
     if (!('image' in card)) {
