@@ -25,13 +25,11 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
       return;
     }
 
-    if (!Object.keys(errors).length) {
+    setTimeout(() => {
       addCard(card);
 
-      setTimeout(() => {
-        reset();
-      }, DelayedResetTime);
-    }
+      reset();
+    }, DelayedResetTime);
   };
 
   const resetForm = (event: FormEvent<HTMLButtonElement>) => {
