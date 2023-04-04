@@ -2,13 +2,15 @@ import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'reac
 import { Storage, Search } from '../../managers/localStorageManager';
 import { SearchBar } from '../../components/search';
 import { Header } from '../../components/header';
-import { getAllCards, searchInCards } from '../../managers/API';
+import { searchInCards } from '../../managers/API';
 import { CardList } from '../../components/cardList';
 import ICardList from '../../components/cardList/type';
+import { Loader } from '../../components/loader';
 
 export const HomePage: React.FC = () => {
   const [value, searchState] = useState<string>(Storage.getValue(Search, ''));
   const [allCards, setCards] = useState<ICardList>({ cards: [] });
+  const [isLoading, setIsLoading] = useState(true);
   const valueRef = useRef(value);
 
   const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -20,20 +22,31 @@ export const HomePage: React.FC = () => {
   }, [value]);
 
   useEffect(() => {
-    (async function fetchData() {
-      const cards = await getAllCards();
-      setCards({ cards: cards });
-    })();
+    try {
+      (async function fetchData() {
+        setIsLoading(true);
 
-    return () => {
+        const resultOfSearch = await searchInCards(valueRef.current);
+        setCards({ cards: resultOfSearch });
+
+        setIsLoading(false);
+      })();
       Storage.setValue(Search, valueRef.current);
-    };
+    } catch (err) {
+      console.error(err);
+    }
   }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const resultOfSearch = await searchInCards(value);
-    setCards({ cards: resultOfSearch });
+    try {
+      setIsLoading(true);
+      const resultOfSearch = await searchInCards(value);
+      setCards({ cards: resultOfSearch });
+      setIsLoading(false);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -41,7 +54,7 @@ export const HomePage: React.FC = () => {
       <Header title={'Home'} />
       <div className="container">
         <SearchBar onChange={inputHandler} value={value} onSubmit={handleSubmit} />
-        <CardList cards={allCards.cards} />
+        {isLoading ? <Loader /> : <CardList cards={allCards.cards} />}
       </div>
     </>
   );
