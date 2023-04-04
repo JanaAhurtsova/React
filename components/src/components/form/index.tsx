@@ -18,20 +18,18 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<IFormValues>({ resolver });
+  } = useForm<IFormValues>({ resolver, reValidateMode: 'onSubmit' });
 
   const onSubmit: SubmitHandler<IFormValues | ICardForm> = (card) => {
     if (!('image' in card)) {
       return;
     }
 
-    if (!Object.keys(errors).length) {
+    setTimeout(() => {
       addCard(card);
 
-      setTimeout(() => {
-        reset();
-      }, DelayedResetTime);
-    }
+      reset();
+    }, DelayedResetTime);
   };
 
   const resetForm = (event: FormEvent<HTMLButtonElement>) => {
