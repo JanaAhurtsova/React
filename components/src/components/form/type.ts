@@ -4,17 +4,20 @@ interface IFormProps {
   addCard: (card: ICardForm) => void;
 }
 
-interface IFormState {
-  errors: Partial<TError>;
+interface IFormValues {
+  name: string;
+  file: FileList;
+  release: string;
+  genre: string;
+  artist: string;
+  confirm: boolean;
 }
 
 type TError = {
-  name: string;
-  img: string;
-  date: string;
-  genre: string;
-  artist: string;
-  checkbox: string;
+  [PropertyKey in keyof IFormValues]: {
+    type: string;
+    message: string;
+  };
 };
 
-export { IFormProps, IFormState };
+export { IFormProps, TError, IFormValues };

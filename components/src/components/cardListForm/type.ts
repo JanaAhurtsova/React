@@ -1,7 +1,5 @@
 import ICardForm from '../cardForm/type';
 
-interface ICardListForm {
+export interface ICardListForm {
   cards: ICardForm[];
 }
-
-export default ICardListForm;

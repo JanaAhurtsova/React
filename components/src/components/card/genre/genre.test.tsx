@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Genre from '.';
+import { Genre } from '.';
 
 const data = 'rock';
 
