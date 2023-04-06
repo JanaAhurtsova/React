@@ -1,0 +1,108 @@
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .4);
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  max-width: 55%;
+  max-height: 80%;
+  width: fit-content;
+  height: fit-content;
+  background: white;
+  color:rgb(0, 0, 0);
+  padding: 2rem 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.close__button {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: .3s;
+
+  &::before {
+    content: "\d7";
+    position: absolute;
+    right: 4px;
+    top: -10px;
+    font-size: 26px;
+    color: #898989;
+  }
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "cover description" "profile profile";
+  grid-gap: 1rem;
+  max-height: calc(80vh - 3.5rem);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: .3rem;
+    height: 3rem;
+    background-color: #ffffff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: #cdcccc;
+  }
+}
+
+.cover {
+  width: 100%;
+  max-width: 35rem;
+  height: auto;
+  grid-area: cover;
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.genres,
+.info {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.genre {
+  border-radius: .5rem;
+  padding: 0 .5rem .2rem;
+  border: 1px solid rgb(191, 191, 191);
+  vertical-align: middle;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 0 .5rem 1rem;
+  grid-area: description;
+}
+
+.artist {
+  font-size: 26px;
+}
+
+.album {
+  font-size: 20px;
+}

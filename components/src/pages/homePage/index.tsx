@@ -25,13 +25,10 @@ export const HomePage: React.FC = () => {
     try {
       (async function fetchData() {
         setIsLoading(true);
-
         const resultOfSearch = await searchInCards(valueRef.current);
         setCards({ cards: resultOfSearch });
-
         setIsLoading(false);
       })();
-      Storage.setValue(Search, valueRef.current);
     } catch (err) {
       console.error(err);
     }
@@ -43,6 +40,7 @@ export const HomePage: React.FC = () => {
       setIsLoading(true);
       const resultOfSearch = await searchInCards(value);
       setCards({ cards: resultOfSearch });
+      Storage.setValue(Search, value);
       setIsLoading(false);
     } catch (err) {
       console.error(err);

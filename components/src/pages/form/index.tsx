@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Form } from '../../components/form';
 import { CardListForm } from '../../components/cardListForm';
 import ICardForm from '../../components/cardForm/type';
-import { Modal } from '../../components/modal';
+import { Modal } from '../../components/modal/formMessage';
 import { DelayedTimeToShowCard } from '../../managers/timers';
 
 export const FormPage: React.FC = () => {
