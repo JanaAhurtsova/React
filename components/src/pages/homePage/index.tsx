@@ -17,33 +17,34 @@ export const HomePage: React.FC = () => {
     valueRef.current = value;
   }, [value]);
 
-  const fetchData = useCallback(async () => {
-    try {
-      setIsLoading(true);
-      const resultOfSearch = await searchInCards(value);
-      setCards({ cards: resultOfSearch });
-      setIsLoading(false);
-    } catch (err) {
-      console.error(err);
-    }
-  }, [value]);
-
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    (async function fetchData() {
+      try {
+        setIsLoading(true);
+        const resultOfSearch = await searchInCards(valueRef.current);
+        setCards({ cards: resultOfSearch });
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, []);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    try {
-      setIsLoading(true);
-      const resultOfSearch = await searchInCards(value);
-      setCards({ cards: resultOfSearch });
-      Storage.setValue(Search, value);
-      setIsLoading(false);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const handleSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      try {
+        setIsLoading(true);
+        const resultOfSearch = await searchInCards(value);
+        setCards({ cards: resultOfSearch });
+        Storage.setValue(Search, value);
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    [value]
+  );
 
   return (
     <>
