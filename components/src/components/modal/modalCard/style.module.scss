@@ -17,9 +17,11 @@
   max-height: 80%;
   width: fit-content;
   height: fit-content;
+  min-height: 50%;
+  min-width: 50%;
   background: white;
   color:rgb(0, 0, 0);
-  padding: 2rem 1rem 1.5rem;
+  padding: 2rem 1rem 1.5rem 1.5rem;
   border-radius: 1rem;
 }
 
@@ -35,9 +37,9 @@
   &::before {
     content: "\d7";
     position: absolute;
-    right: 4px;
-    top: -10px;
-    font-size: 26px;
+    right: 2px;
+    top: -14px;
+    font-size: 30px;
     color: #898989;
   }
 

@@ -15,7 +15,7 @@ export const SearchBar: React.FC<ISearch> = ({ onSubmit, onChange, value }) => {
         autoFocus={true}
       />
       <button className={style.submit} type="submit">
-        Submit
+        Search
       </button>
     </form>
   );

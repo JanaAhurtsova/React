@@ -28,6 +28,7 @@ export default defineConfig({
         '**/.{eslint,mocha,prettier}rc.{js,cjs,yml}',
         'src/main.tsx',
         '**/type.ts',
+        'src/managers/**',
       ],
     },
   },

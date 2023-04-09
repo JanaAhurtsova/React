@@ -34,6 +34,10 @@ describe('FormPage', () => {
       fireEvent.click(screen.getByRole('button', { name: /Submit/i }));
     });
 
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+
     expect(screen.getByText(/successfully/i)).toBeInTheDocument();
 
     await act(async () => {
