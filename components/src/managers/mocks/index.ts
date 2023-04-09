@@ -30,7 +30,7 @@ export const Cards = [
 ];
 
 export const handlers = [
-  rest.get(`${Catalog}?q=`, (req, res, ctx) => {
+  rest.get(`${Catalog}`, (req, res, ctx) => {
     const query = req.url.searchParams.get('q');
     if (!query) {
       return res(ctx.status(200), ctx.json(Cards));

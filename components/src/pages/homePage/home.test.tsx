@@ -62,7 +62,6 @@ describe('Home page', () => {
   });
 
   it('render cards', async () => {
-    console.log(localStorage.getItem('test'));
     const router = createMemoryRouter([{ path: '/', element: <HomePage /> }], {
       initialEntries: ['/'],
     });
