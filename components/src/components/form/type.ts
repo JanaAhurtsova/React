@@ -2,6 +2,7 @@ import ICardForm from '../cardForm/type';
 
 interface IFormProps {
   addCard: (card: ICardForm) => void;
+  modalState: (value: React.SetStateAction<boolean>) => void;
 }
 
 interface IFormValues {

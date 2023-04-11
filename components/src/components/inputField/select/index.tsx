@@ -17,7 +17,7 @@ export const Select: React.FC<TOptions> = ({
       <select className={style.select} defaultValue={defaultValue} {...register(genre)}>
         {genres.map((genre) => {
           return (
-            <option key={genre} value={genre} hidden={genre === SelectElement ? true : false}>
+            <option key={genre} value={genre} hidden={genre === SelectElement}>
               {genre}
             </option>
           );

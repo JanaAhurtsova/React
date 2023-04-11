@@ -10,9 +10,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { resolver } from './resolver';
 import ICardForm from '../cardForm/type';
 import { artists } from '../../data/artists';
-import { DelayedResetTime } from '../../managers/timers';
+import { DelayedResetTime, modalShowTime } from '../../managers/timers';
 
-export const Form: React.FC<IFormProps> = ({ addCard }) => {
+export const Form: React.FC<IFormProps> = ({ addCard, modalState }) => {
   const {
     register,
     handleSubmit,
@@ -30,6 +30,10 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
 
       reset();
     }, DelayedResetTime);
+
+    setTimeout(() => {
+      modalState(false);
+    }, modalShowTime);
   };
 
   const resetForm = (event: FormEvent<HTMLButtonElement>) => {

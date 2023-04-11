@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { Catalog } from '../API/requests';
+import { BaseURL } from '../API/requests';
 
 export const Cards = [
   {
@@ -30,10 +30,10 @@ export const Cards = [
 ];
 
 export const handlers = [
-  rest.get(Catalog, (req, res, ctx) => {
+  rest.get(BaseURL, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(Cards));
   }),
-  rest.get(Catalog, (req, res, ctx) => {
+  rest.get(BaseURL, (req, res, ctx) => {
     const query = req.url.searchParams.get('q');
     if (query === 'panic') {
       return res(ctx.status(200), ctx.json(Cards[0]));
@@ -41,7 +41,7 @@ export const handlers = [
 
     return req.passthrough();
   }),
-  rest.get(`${Catalog}/:id`, (req, res, ctx) => {
+  rest.get(`${BaseURL}/:id`, (req, res, ctx) => {
     const { id } = req.params;
     return res(ctx.status(200), ctx.json(Cards[Number(id) - 1]));
   }),
