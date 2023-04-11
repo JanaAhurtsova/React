@@ -1,50 +1,20 @@
-import React, { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
-import { Storage, Search } from '../../managers/localStorageManager';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { SearchBar } from '../../components/search';
 import { Header } from '../../components/header';
-import { searchInCards } from '../../managers/API/requests';
 import { CardList } from '../../components/cardList';
 import ICardList from '../../components/cardList/type';
 import { Loader } from '../../components/loader';
+import { useSearchCardsQuery } from '../../redux/reducers/API';
 
 export const HomePage: React.FC = () => {
-  const [value, searchState] = useState<string>(Storage.getValue(Search, ''));
+  const [value, searchState] = useState<string>('');
   const [allCards, setCards] = useState<ICardList>({ cards: [] });
-  const [isLoading, setIsLoading] = useState(true);
-  const valueRef = useRef(value);
+  const { data = [], isLoading } = useSearchCardsQuery(value);
 
-  useEffect(() => {
-    valueRef.current = value;
-  }, [value]);
-
-  useEffect(() => {
-    (async function fetchData() {
-      try {
-        setIsLoading(true);
-        const resultOfSearch = await searchInCards(valueRef.current);
-        setCards({ cards: resultOfSearch });
-        setIsLoading(false);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
-
-  const handleSubmit = useCallback(
-    async (event: FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      try {
-        setIsLoading(true);
-        const resultOfSearch = await searchInCards(value);
-        setCards({ cards: resultOfSearch });
-        Storage.setValue(Search, value);
-        setIsLoading(false);
-      } catch (err) {
-        console.error(err);
-      }
-    },
-    [value]
-  );
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // setCards({ cards: data });
+  };
 
   return (
     <>
@@ -55,7 +25,7 @@ export const HomePage: React.FC = () => {
           value={value}
           onSubmit={handleSubmit}
         />
-        {isLoading ? <Loader /> : <CardList cards={allCards.cards} />}
+        {isLoading ? <Loader /> : <CardList cards={data} />}
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import IData from '../../../components/card/type';
-
-const BaseURL = 'https://mock-server-api-xi.vercel.app';
+import { BaseURL } from '..';
 export const Catalog = `${BaseURL}/catalog`;
 
 export const getCards = async () => {

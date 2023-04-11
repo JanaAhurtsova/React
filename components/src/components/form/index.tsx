@@ -63,8 +63,8 @@ export const Form: React.FC<IFormProps> = ({ addCard }) => {
           <Select
             label="Select Genre:"
             defaultValue={genres[0]}
-            genre="genre"
-            genres={genres}
+            select="genre"
+            options={genres}
             error={errors.genre}
             register={register}
           />

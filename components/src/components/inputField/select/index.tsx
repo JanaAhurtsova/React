@@ -6,19 +6,19 @@ import { SelectElement } from '../../../managers/hiddenElement';
 export const Select: React.FC<TOptions> = ({
   label,
   defaultValue,
-  genre,
+  select,
   register,
-  genres,
+  options,
   error,
 }) => {
   return (
     <div className={style.select__wrapper}>
       <label>{label}</label>
-      <select className={style.select} defaultValue={defaultValue} {...register(genre)}>
-        {genres.map((genre) => {
+      <select className={style.select} defaultValue={defaultValue} {...register(select)}>
+        {options.map((item) => {
           return (
-            <option key={genre} value={genre} hidden={genre === SelectElement ? true : false}>
-              {genre}
+            <option key={item} value={item} hidden={item === SelectElement ? true : false}>
+              {item}
             </option>
           );
         })}

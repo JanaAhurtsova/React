@@ -5,10 +5,10 @@ import { IFormValues } from '../../form/type';
 type TOptions = {
   label: string;
   defaultValue: string;
-  genres: string[];
+  options: string[];
   error?: FieldError;
   register: UseFormRegister<IFormValues>;
-  genre: keyof IFormValues;
+  select: keyof IFormValues;
 };
 
 export default TOptions;

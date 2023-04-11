@@ -5,25 +5,13 @@ import { Cover } from './cover';
 import style from './style.module.scss';
 import { ModalCard } from '../modal/modalCard';
 import { createPortal } from 'react-dom';
-import { getCard } from '../../managers/API/requests';
-import { IModalCard } from '../modal/modalCard/type';
 
 export const Card: React.FC<IData> = (props) => {
   const [showModal, setShowModal] = useState(false);
-  const [cardModal, setCardModal] = useState<IModalCard['card']>(props);
-  const [isLoading, setLoading] = useState(true);
-
-  const handleClick = async () => {
-    setLoading(true);
-    setShowModal(true);
-    const result = await getCard(props.id);
-    setCardModal(result);
-    setLoading(false);
-  };
 
   return (
     <>
-      <li className={style.card} id={'card' + String(props.id)} onClick={handleClick}>
+      <li className={style.card} id={'card' + String(props.id)} onClick={() => setShowModal(true)}>
         <Cover cover={props.cover} album={props.album} />
         <div className={style.card__description}>
           <h3>{props.artist}</h3>
@@ -41,10 +29,7 @@ export const Card: React.FC<IData> = (props) => {
         </div>
       </li>
       {showModal &&
-        createPortal(
-          <ModalCard card={cardModal} onClose={() => setShowModal(false)} isLoading={isLoading} />,
-          document.body
-        )}
+        createPortal(<ModalCard card={props} onClose={() => setShowModal(false)} />, document.body)}
     </>
   );
 };
