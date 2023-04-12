@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ICardsState } from './type';
+import { NameReducer } from '../../../managers/reducers';
 
 const initialState: ICardsState = {
   cards: [],
@@ -8,8 +9,8 @@ const initialState: ICardsState = {
   searchValue: '',
 };
 
-export const cardsSlice = createSlice({
-  name: 'Cards',
+export const searchSlice = createSlice({
+  name: NameReducer.SEARCH,
   initialState,
   reducers: {
     search(state, action: PayloadAction<string>) {
@@ -18,4 +19,5 @@ export const cardsSlice = createSlice({
   },
 });
 
-export default cardsSlice.reducer;
+export default searchSlice.reducer;
+export const { search } = searchSlice.actions;

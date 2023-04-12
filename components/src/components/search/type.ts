@@ -1,7 +1,5 @@
-import { ChangeEvent } from 'react';
+import { SetStateAction } from 'react';
 
 export default interface ISearch {
-  onSubmit: (event: ChangeEvent<HTMLFormElement>) => void;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  value: string;
+  setState: (value: SetStateAction<string>) => void;
 }
