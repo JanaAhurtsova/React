@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: rgba(141, 143, 215, 0.304) 5px 0.4rem .4rem 0px;
+  transition: .3s;
+  cursor: pointer;
+  background-color: white;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(169, 177, 221, 0.35) 0.5rem 0.5rem .4rem 0px;
+  }
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 .5rem 1rem;
+  color: black;
+
+  @media(max-width: 550px) {
+
+    gap: .5rem;
+  
+  }
+}
+
+.genres,
+.info {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
