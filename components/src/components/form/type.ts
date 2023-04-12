@@ -1,9 +1,3 @@
-import ICardForm from '../cardForm/type';
-
-interface IFormProps {
-  addCard: (card: ICardForm) => void;
-}
-
 interface IFormValues {
   name: string;
   file: FileList;
@@ -20,4 +14,4 @@ type TError = {
   };
 };
 
-export { IFormProps, TError, IFormValues };
+export { TError, IFormValues };

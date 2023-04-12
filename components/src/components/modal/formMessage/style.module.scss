@@ -12,11 +12,14 @@
 
 .modal {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 20rem;
   height: 10rem;
   background-color: #ffffff;
   color: #069f10;
   border-radius: .5rem;
+}
+
+.message {
+  text-align: center;
 }

@@ -6,10 +6,17 @@ import { Type } from './enum';
 
 export const resolver: Resolver<IFormValues> = async (values) => {
   const handleValues = (values: IFormValues) => {
-    const file = values.file ? values.file[0] : null;
+    const file = values?.file?.[0];
     const image = file ? URL.createObjectURL(file) : '';
+    const card = {
+      name: values.name,
+      image: image,
+      release: values.release,
+      genre: values.genre,
+      artist: values.artist,
+    };
 
-    return { ...values, image };
+    return card;
   };
 
   const generateError = (message: string) => ({
@@ -19,7 +26,7 @@ export const resolver: Resolver<IFormValues> = async (values) => {
 
   const handleError = (values: IFormValues) => {
     const errors = {} as TError;
-    const file = values.file.length ? values.file[0] : null;
+    const file = values?.file?.[0];
 
     if (!values.name.trim()) {
       errors.name = generateError(errorsText.name);

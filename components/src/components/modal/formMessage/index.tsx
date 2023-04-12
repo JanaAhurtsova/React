@@ -5,7 +5,7 @@ export const Modal: React.FC = () => {
   return (
     <div className={style.overlay}>
       <div className={style.modal}>
-        <h3>The data has been saved successfully</h3>
+        <h3 className={style.message}>The data has been saved successfully</h3>
       </div>
     </div>
   );

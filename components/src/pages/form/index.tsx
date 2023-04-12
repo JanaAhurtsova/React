@@ -1,37 +1,18 @@
 import { Header } from '../../components/header';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Form } from '../../components/form';
 import { CardListForm } from '../../components/cardListForm';
-import ICardForm from '../../components/cardForm/type';
-import { Modal } from '../../components/modal/formMessage';
-import { DelayedTimeToShowCard, modalShowTime } from '../../managers/timers';
+import { useAppSelector } from '../../redux/hooks';
 
 export const FormPage: React.FC = () => {
-  const [cards, cardsState] = useState<ICardForm[]>([]);
-  const [modal, modalState] = useState(false);
-
-  useEffect(() => {
-    if (modal) {
-      setTimeout(() => {
-        modalState(false);
-      }, modalShowTime);
-    }
-  }, [modal]);
-
-  const addCard = (card: ICardForm) => {
-    modalState(true);
-    setTimeout(() => {
-      cardsState([...cards, card]);
-    }, DelayedTimeToShowCard);
-  };
+  const cards = useAppSelector((state) => state.form.cards);
 
   return (
     <>
       <Header title={'Form'} />
       <div className="container">
-        <Form addCard={(card: ICardForm) => addCard(card)} />
+        <Form />
         <CardListForm cards={cards} />
-        {modal && <Modal />}
       </div>
     </>
   );

@@ -3,4 +3,5 @@ export enum NameReducer {
   SEARCH = 'Search',
   CARDS_API = 'cardsApi',
   LIST = 'LIST',
+  FORM = 'Form',
 }

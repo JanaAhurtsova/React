@@ -5,7 +5,6 @@ import { NameReducer } from '../../../managers/reducers';
 const initialState: ICardsState = {
   cards: [],
   isLoading: false,
-  error: '',
   searchValue: '',
 };
 
