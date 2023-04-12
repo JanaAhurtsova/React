@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { CardList } from '.';
-import { Cards } from '../../managers/mocks';
+import { Cards } from '../../managers/tests/mocks';
 
 const dataMock = /Pray/i;
 

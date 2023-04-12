@@ -1,7 +1,3 @@
-import IData from '../../../components/card/type';
-
-export interface ICardsState {
-  cards: IData[];
-  isLoading: boolean;
+export interface ISearchState {
   searchValue: string;
 }

@@ -1,10 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ICardsState } from './type';
+import { ISearchState } from './type';
 import { NameReducer } from '../../../managers/reducers';
 
-const initialState: ICardsState = {
-  cards: [],
-  isLoading: false,
+const initialState: ISearchState = {
   searchValue: '',
 };
 

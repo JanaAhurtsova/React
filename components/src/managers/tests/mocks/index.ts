@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { BaseURL } from '../API';
+import { BaseURL } from '../../API';
 
 export const Cards = [
   {
@@ -46,30 +46,3 @@ export const handlers = [
     return res(ctx.status(200), ctx.json(Cards[Number(id) - 1]));
   }),
 ];
-
-type TStore = {
-  [key: string]: string;
-};
-
-export class LocalStorageMock {
-  store: TStore;
-  constructor() {
-    this.store = {};
-  }
-
-  getItem(key: string) {
-    return this.store[key];
-  }
-
-  setItem(key: string, value: string) {
-    this.store[key] = value;
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  removeItem(key: string) {
-    delete this.store[key];
-  }
-}

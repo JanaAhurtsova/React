@@ -5,14 +5,6 @@ import ICardForm from '../../../components/cardForm/type';
 
 const initialState: IFormState = {
   cards: [],
-  isLoading: false,
-  cardInfo: {
-    image: '',
-    name: '',
-    release: '',
-    genre: '',
-    artist: '',
-  },
 };
 
 export const formSlice = createSlice({

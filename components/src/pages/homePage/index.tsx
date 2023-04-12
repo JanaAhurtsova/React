@@ -8,14 +8,14 @@ import { useAppSelector } from '../../redux/hooks';
 
 export const HomePage: React.FC = () => {
   const searchValue = useAppSelector((state) => state.search.searchValue);
-  const { data = [], isLoading } = useSearchCardsQuery(searchValue);
+  const { data = [], isFetching } = useSearchCardsQuery(searchValue);
 
   return (
     <>
       <Header title={'Home'} />
       <div className="container">
         <SearchBar />
-        {isLoading ? <Loader /> : <CardList cards={data} />}
+        {isFetching ? <Loader /> : <CardList cards={data} />}
       </div>
     </>
   );

@@ -10,13 +10,6 @@ export const cardsApi = createApi({
   endpoints: (build) => ({
     searchCards: build.query<IData[], string>({
       query: (value: string) => `${value && `?q=${value}`}`,
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: NameReducer.CARDS as const, id })),
-              { type: NameReducer.CARDS, id: NameReducer.LIST },
-            ]
-          : [{ type: NameReducer.CARDS, id: NameReducer.LIST }],
     }),
     getCard: build.query<IData, number>({
       query: (id) => `/${id}`,
