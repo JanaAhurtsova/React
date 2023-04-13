@@ -1,17 +1,31 @@
 import React from 'react';
 import { Card } from '../card';
 import style from './style.module.scss';
-import ICardList from './type';
+import { Loader } from '../loader';
+import { useSearchCardsQuery } from '../../redux/reducers/API';
+import { useAppSelector } from '../../redux/hooks';
 
-export const CardList: React.FC<ICardList> = ({ cards }) => {
-  if (!cards.length) {
-    return <div>No cards found</div>;
-  }
+export const CardList: React.FC = () => {
+  const searchValue = useAppSelector((state) => state.search.searchValue);
+  const { data = [], isError, isFetching } = useSearchCardsQuery(searchValue);
+
   return (
-    <ul className={style.card__list}>
-      {cards.map((card) => {
-        return <Card {...card} key={card.id} />;
-      })}
-    </ul>
+    <>
+      {isError ? (
+        <span>Oops... Something went wrong</span>
+      ) : isFetching ? (
+        <Loader />
+      ) : (
+        <ul className={style.card__list}>
+          {!data.length ? (
+            <div>No cards found</div>
+          ) : (
+            data.map((card) => {
+              return <Card {...card} key={card.id} />;
+            })
+          )}
+        </ul>
+      )}
+    </>
   );
 };

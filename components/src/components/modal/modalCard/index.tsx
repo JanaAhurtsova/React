@@ -5,13 +5,15 @@ import style from './style.module.scss';
 import { IModalCard } from './type';
 
 export const ModalCard: React.FC<IModalCard> = ({ card, onClose }) => {
-  const { data = card, isLoading } = useGetCardQuery(card.id);
+  const { data = card, isError, isLoading } = useGetCardQuery(card.id);
 
   return (
     <div className={style.overlay} onClick={onClose}>
       <div className={style.modal} onClick={(e) => e.stopPropagation()}>
         <span className={style.close__button} onClick={onClose}></span>
-        {isLoading ? (
+        {isError ? (
+          <span>Oops... Something went wrong</span>
+        ) : isLoading ? (
           <Loader />
         ) : (
           <div className={style.content}>
