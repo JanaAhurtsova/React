@@ -33,7 +33,7 @@ describe('Home page', () => {
     });
     renderWithProviders(<RouterProvider router={router} />);
 
-    await act(() => {
+    act(() => {
       fireEvent.change(screen.getByRole('searchbox'), { target: { value: /panic/i } });
       fireEvent.click(screen.getByRole('button', { name: /Search/i }));
     });
@@ -50,7 +50,7 @@ describe('Home page', () => {
     const { getByRole } = renderWithProviders(<RouterProvider router={router} />);
 
     await waitFor(() => getByRole('card1'));
-    await act(() => {
+    act(() => {
       fireEvent.click(getByRole('card1'));
     });
     await waitFor(() => screen.getByText(/American rock band from Las Vegas/i));
