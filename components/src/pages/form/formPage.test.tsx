@@ -1,13 +1,15 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { FormPage } from '.';
+import { renderWithProviders } from '../../test/renderWithProvide';
 
 describe('FormPage', () => {
   it('render component', () => {
     const router = createMemoryRouter([{ path: '/form', element: <FormPage /> }], {
       initialEntries: ['/form'],
     });
-    render(<RouterProvider router={router} />);
+    renderWithProviders(<RouterProvider router={router} />);
+
     expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
     expect(screen.queryAllByText(/form/i).length).toBe(2);
   });
@@ -16,7 +18,9 @@ describe('FormPage', () => {
     const router = createMemoryRouter([{ path: '/form', element: <FormPage /> }], {
       initialEntries: ['/form'],
     });
-    const { container } = render(<RouterProvider router={router} />);
+
+    const { container } = renderWithProviders(<RouterProvider router={router} />);
+
     window.URL.createObjectURL = vi.fn();
     const mockJpg = new File(['test'], 'test.jpg', { type: 'image/jpg' });
 

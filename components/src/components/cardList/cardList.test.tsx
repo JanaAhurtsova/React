@@ -1,14 +1,19 @@
-import { render, screen } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { CardList } from '.';
-import { Cards } from '../../managers/tests/mocks';
+import { renderWithProviders } from '../../test/renderWithProvide';
 
 const dataMock = /Pray/i;
+vi.mock('../../components/loader', () => ({
+  Loader: () => <div data-testid="testId"></div>,
+}));
 
 describe('CardList component', () => {
-  it('render cardList', () => {
-    render(<CardList cards={Cards} />);
+  it('render cardList', async () => {
+    const { getByRole, getByAltText } = renderWithProviders(<CardList />);
 
-    expect(screen.getByRole('list')).toBeInTheDocument();
-    expect(screen.getByAltText(dataMock)).toBeInTheDocument();
+    await waitForElementToBeRemoved(() => screen.queryByTestId('testId'));
+
+    expect(getByRole('list')).toBeInTheDocument();
+    expect(getByAltText(dataMock)).toBeInTheDocument();
   });
 });

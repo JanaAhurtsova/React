@@ -1,18 +1,17 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { Form } from '.';
+import { renderWithProviders } from '../../test/renderWithProvide';
 
 describe('Form component', () => {
-  const mockFn = vi.fn;
-
   it('render component', () => {
-    render(<Form addCard={mockFn} />);
+    renderWithProviders(<Form />);
 
     expect(screen.getByRole('textbox')).toBeInTheDocument();
     expect(screen.getByRole('combobox')).toBeInTheDocument();
   });
 
   it('render errors when all fields are empty', async () => {
-    render(<Form addCard={mockFn} />);
+    renderWithProviders(<Form />);
 
     await waitFor(() => {
       fireEvent.submit(screen.getByRole('button', { name: 'Submit' }));
@@ -27,7 +26,7 @@ describe('Form component', () => {
   });
 
   it('reset form', async () => {
-    render(<Form addCard={mockFn} />);
+    renderWithProviders(<Form />);
 
     await waitFor(() => {
       fireEvent.change(screen.getByRole('textbox'), { target: { value: 'Test' } });
@@ -40,7 +39,7 @@ describe('Form component', () => {
   });
 
   it('should check invalid date when date has not yet come', async () => {
-    const { container } = render(<Form addCard={mockFn} />);
+    const { container } = renderWithProviders(<Form />);
 
     await waitFor(() => {
       fireEvent.change(container.querySelector('[type="date"]')!, {
@@ -53,7 +52,8 @@ describe('Form component', () => {
   });
 
   it('should check invalid file format upload', async () => {
-    const { container } = render(<Form addCard={mockFn} />);
+    const { container } = renderWithProviders(<Form />);
+
     const mockPdf = new File(['test'], 'test.pdf', { type: 'application/pdf' });
     window.URL.createObjectURL = vi.fn();
 

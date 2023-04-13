@@ -11,7 +11,12 @@ export const Card: React.FC<IData> = (props) => {
 
   return (
     <>
-      <li className={style.card} id={'card' + String(props.id)} onClick={() => setShowModal(true)}>
+      <li
+        className={style.card}
+        id={`card${props.id}`}
+        role={`card${props.id}`}
+        onClick={() => setShowModal(true)}
+      >
         <Cover cover={props.cover} album={props.album} />
         <div className={style.card__description}>
           <h3>{props.artist}</h3>
