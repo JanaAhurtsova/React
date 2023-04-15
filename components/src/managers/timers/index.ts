@@ -1,2 +1,1 @@
-export const DelayedResetTime = 2600;
-export const modalShowTime = 2500;
+export const DelayedFormTime = 2600;

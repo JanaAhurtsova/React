@@ -17,7 +17,7 @@ export const Select: React.FC<TOptions> = ({
       <select className={style.select} defaultValue={defaultValue} {...register(select)}>
         {options.map((item) => {
           return (
-            <option key={item} value={item} hidden={item === SelectElement ? true : false}>
+            <option key={item} value={item} hidden={item === SelectElement}>
               {item}
             </option>
           );

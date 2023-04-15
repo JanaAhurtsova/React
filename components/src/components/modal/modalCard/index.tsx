@@ -11,9 +11,8 @@ export const ModalCard: React.FC<IModalCard> = ({ card, onClose }) => {
     <div className={style.overlay} onClick={onClose}>
       <div className={style.modal} onClick={(e) => e.stopPropagation()}>
         <span className={style.close__button} onClick={onClose}></span>
-        {isError ? (
-          <span>Oops... Something went wrong</span>
-        ) : isLoading ? (
+        {isError && <span>Oops... Something went wrong</span>}
+        {isLoading ? (
           <Loader />
         ) : (
           <div className={style.content}>

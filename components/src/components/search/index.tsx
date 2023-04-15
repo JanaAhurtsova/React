@@ -1,16 +1,14 @@
 import React, { useState, FormEvent } from 'react';
 import style from './style.module.scss';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { search } from '../../redux/reducers/main';
+import { useSearchDispatch } from '../../redux/hooks';
 
 export const SearchBar: React.FC = () => {
-  const searchValue = useAppSelector((state) => state.search.searchValue);
-  const dispatch = useAppDispatch();
-  const [value, setValue] = useState<string>(searchValue);
+  const [value, setValue] = useState('');
+  const { search } = useSearchDispatch({ value, setValue });
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(search(value));
+    search();
   };
 
   return (

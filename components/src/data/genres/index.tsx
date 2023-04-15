@@ -1,4 +1,4 @@
-export const genres = [
+export const Genres = [
   'Choose a Genre',
   'Rock',
   'Pop',

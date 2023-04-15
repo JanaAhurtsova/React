@@ -1,1 +1,1 @@
-export const artists = ['Band', 'Singer'];
+export const Artists = ['Band', 'Singer'];

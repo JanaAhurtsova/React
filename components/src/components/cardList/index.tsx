@@ -11,19 +11,15 @@ export const CardList: React.FC = () => {
 
   return (
     <>
-      {isError ? (
-        <span>Oops... Something went wrong</span>
-      ) : isFetching ? (
+      {isError && <span>Oops... Something went wrong</span>}
+      {isFetching ? (
         <Loader />
       ) : (
         <ul className={style.card__list}>
-          {!data.length ? (
-            <div>No cards found</div>
-          ) : (
-            data.map((card) => {
-              return <Card {...card} key={card.id} />;
-            })
-          )}
+          {!isError && !data.length && <div className={style.no_cards}>No cards found</div>}
+          {data.map((card) => {
+            return <Card {...card} key={card.id} />;
+          })}
         </ul>
       )}
     </>

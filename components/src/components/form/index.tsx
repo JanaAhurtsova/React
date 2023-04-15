@@ -5,12 +5,12 @@ import { Radio } from '../inputField/radio';
 import { Select } from '../inputField/select';
 import style from './style.module.scss';
 import { IFormValues } from './type';
-import { genres } from '../../data/genres';
+import { Genres } from '../../data/genres';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { resolver } from './resolver';
 import ICardForm from '../cardForm/type';
-import { artists } from '../../data/artists';
-import { DelayedResetTime, modalShowTime } from '../../managers/timers';
+import { Artists } from '../../data/artists';
+import { DelayedFormTime } from '../../managers/timers';
 import { useAppDispatch } from '../../redux/hooks';
 import { addCard } from '../../redux/reducers/form';
 import { Modal } from '../modal/formMessage';
@@ -31,15 +31,12 @@ export const Form: React.FC = () => {
       return;
     }
     setModal(true);
+
     setTimeout(() => {
       setModal(false);
-    }, modalShowTime);
-
-    setTimeout(() => {
       dispatch(addCard(card));
-
       reset();
-    }, DelayedResetTime);
+    }, DelayedFormTime);
   };
 
   const resetForm = (event: FormEvent<HTMLButtonElement>) => {
@@ -68,14 +65,14 @@ export const Form: React.FC = () => {
               error={errors.release}
               register={register}
             />
-            <Radio artists={artists} error={errors.artist} name="artist" register={register} />
+            <Radio artists={Artists} error={errors.artist} name="artist" register={register} />
           </div>
           <div className={style.selected}>
             <Select
               label="Select Genre:"
-              defaultValue={genres[0]}
+              defaultValue={Genres[0]}
               select="genre"
-              options={genres}
+              options={Genres}
               error={errors.genre}
               register={register}
             />
