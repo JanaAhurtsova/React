@@ -11,13 +11,12 @@ import { resolver } from './resolver';
 import ICardForm from '../cardForm/type';
 import { Artists } from '../../data/artists';
 import { DelayedFormTime } from '../../managers/timers';
-import { useAppDispatch } from '../../redux/hooks';
-import { addCard } from '../../redux/reducers/form';
+import { useFormEvent } from '../../redux/hooks';
 import { Modal } from '../modal/formMessage';
 import { createPortal } from 'react-dom';
 
 export const Form: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const addCard = useFormEvent();
   const [modal, setModal] = useState(false);
   const {
     register,
@@ -34,7 +33,7 @@ export const Form: React.FC = () => {
 
     setTimeout(() => {
       setModal(false);
-      dispatch(addCard(card));
+      addCard(card);
       reset();
     }, DelayedFormTime);
   };
