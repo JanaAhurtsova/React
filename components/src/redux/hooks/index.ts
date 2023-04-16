@@ -20,11 +20,12 @@ export const useSearchEvent = ({ setValue }: ISearchDispatch) => {
     setValue(searchValue);
   }, [searchValue, setValue]);
 
-  return {
-    search: (value: string) => {
+  return useCallback(
+    (value: string) => {
       dispatch(search(value));
     },
-  };
+    [dispatch]
+  );
 };
 
 export const useFormEvent = () => {
