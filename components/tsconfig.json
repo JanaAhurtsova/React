@@ -5,6 +5,7 @@
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "node",
+    "allowJs": true,
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
@@ -15,8 +16,14 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "resolveJsonModule": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "outDir": "dist"
   },
-  "include": ["./src/**/*", "styled.d.ts", "vite.config.ts", ".eslintrc.json"],
+ "ts-node": {
+    "esm": true,
+    "transpileOnly": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["./src/**/*", "styled.d.ts", "vite.config.ts", ".eslintrc.json", "server.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
