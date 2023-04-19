@@ -24,6 +24,6 @@
     "transpileOnly": true,
     "experimentalSpecifierResolution": "node"
   },
-  "include": ["./src/**/*", "styled.d.ts", "vite.config.ts", ".eslintrc.json", "server.tsx"],
+  "include": ["./src/**/*", "src/styled.d.ts", "vite.config.ts", ".eslintrc.json", "server.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
