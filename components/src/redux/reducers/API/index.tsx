@@ -1,7 +1,17 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import * as RTKQueryRaw from '@reduxjs/toolkit/query/react';
 import { BaseURL } from '../../../managers/API';
 import IData from '../../../components/card/type';
 import { NameReducer } from '../../../managers/reducers';
+// import { buildCreateApi, coreModule, reactHooksModule, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+type TypeRTKQueryRaw = typeof RTKQueryRaw & { default?: unknown };
+const { fetchBaseQuery, buildCreateApi, coreModule, reactHooksModule } = ((RTKQueryRaw as TypeRTKQueryRaw).default ??
+  RTKQueryRaw) as typeof RTKQueryRaw;
+
+const createApi = buildCreateApi(
+  coreModule(),
+  reactHooksModule({ unstable__sideEffectsInRender: true })
+);
 
 export const cardsApi = createApi({
   reducerPath: NameReducer.CARDS_API,
