@@ -7,17 +7,19 @@ type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
 const { configureStore, combineReducers } = ((toolkitRaw as TypeToolkitRaw).default ??
   toolkitRaw) as typeof toolkitRaw;
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   [cardsApi.reducerPath]: cardsApi.reducer,
   search: searchReducer,
   form: formReducer,
 });
 
-export const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(cardsApi.middleware),
-});
+export const setupStore = (preloadedState?: toolkitRaw.PreloadedState<ReturnType<typeof rootReducer>>) =>
+  configureStore({
+    reducer: rootReducer,
+    preloadedState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(cardsApi.middleware),
+  });
 
-export type AppStore = typeof store;
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore['dispatch'];
+export type RootState = ReturnType<typeof rootReducer>;

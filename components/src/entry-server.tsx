@@ -2,12 +2,15 @@ import { RenderToPipeableStreamOptions, renderToPipeableStream } from 'react-dom
 import { StaticRouter } from 'react-router-dom/server';
 import { App } from './components/app/App';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { setupStore } from './redux/store';
 import { Html } from './html';
+import { cardsApi } from './redux/reducers/API';
 
-const preloadedState = store.getState();
+export const renderApp = async (url: string, opts?: RenderToPipeableStreamOptions) => {
+  const store = setupStore({});
+  await Promise.all(store.dispatch(cardsApi.util.getRunningQueriesThunk()));
+  const preloadedState = store.getState();
 
-export const renderApp = (url: string, opts?: RenderToPipeableStreamOptions) => {
   const { pipe } = renderToPipeableStream(
     <Html preloadedState={preloadedState}>
       <Provider store={store}>
@@ -18,5 +21,7 @@ export const renderApp = (url: string, opts?: RenderToPipeableStreamOptions) => 
     </Html>,
     opts
   );
+  
   return pipe;
 };
+
