@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useCallback } from 'react';
 import style from './style.module.scss';
 import { useSearchEvent } from '../../redux/hooks';
 
@@ -6,10 +6,10 @@ export const SearchBar: React.FC = () => {
   const [value, setValue] = useState('');
   const { search } = useSearchEvent({ setValue });
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     search(value);
-  };
+  }, [search]);
 
   return (
     <form onSubmit={handleSubmit}>

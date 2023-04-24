@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '../card';
 import style from './style.module.scss';
 import { Loader } from '../loader';
@@ -7,7 +7,12 @@ import { useAppSelector } from '../../redux/hooks';
 
 export const CardList: React.FC = () => {
   const searchValue = useAppSelector((state) => state.search.searchValue);
-  const { data = [], isError, isFetching } = useSearchCardsQuery(searchValue);
+  const [value, setValue] = useState('');
+  const { data = [], isError, isFetching } = useSearchCardsQuery(value);
+
+  useEffect(() => {
+    setValue(searchValue);
+  }, [searchValue]);
 
   return (
     <>
