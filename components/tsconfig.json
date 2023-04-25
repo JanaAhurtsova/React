@@ -16,7 +16,7 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "resolveJsonModule": true,
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "cypress"],
     "outDir": "dist"
   },
  "ts-node": {

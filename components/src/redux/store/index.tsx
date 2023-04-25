@@ -13,11 +13,14 @@ export const rootReducer = combineReducers({
   form: formReducer,
 });
 
-export const setupStore = (preloadedState?: toolkitRaw.PreloadedState<ReturnType<typeof rootReducer>>) =>
+export const setupStore = (
+  preloadedState?: toolkitRaw.PreloadedState<ReturnType<typeof rootReducer>>
+) =>
   configureStore({
     reducer: rootReducer,
     preloadedState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(cardsApi.middleware),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({ immutableCheck: false }).concat(cardsApi.middleware),
   });
 
 export type AppStore = ReturnType<typeof setupStore>;

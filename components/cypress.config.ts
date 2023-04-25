@@ -3,7 +3,7 @@ import coverage from '@cypress/code-coverage/task';
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:3001',
+    baseUrl: 'http://localhost:8000',
     setupNodeEvents(on, config) {
       coverage(on, config);
 
