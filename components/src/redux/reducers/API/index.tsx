@@ -4,8 +4,9 @@ import IData from '../../../components/card/type';
 import { NameReducer } from '../../../managers/reducers';
 
 type TypeRTKQueryRaw = typeof RTKQueryRaw & { default?: unknown };
-const { fetchBaseQuery, buildCreateApi, coreModule, reactHooksModule } = ((RTKQueryRaw as TypeRTKQueryRaw).default ??
-  RTKQueryRaw) as typeof RTKQueryRaw;
+const { fetchBaseQuery, buildCreateApi, coreModule, reactHooksModule } = ((
+  RTKQueryRaw as TypeRTKQueryRaw
+).default ?? RTKQueryRaw) as typeof RTKQueryRaw;
 
 const createApi = buildCreateApi(
   coreModule(),

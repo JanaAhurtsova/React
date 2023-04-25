@@ -23,10 +23,17 @@ export const Html: React.FC<IHtml> = ({ children, preloadedState }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>React tasks</title>
       </head>
-      <body >
+      <body>
         <div id="root">{children}</div>
-        <script type="module" dangerouslySetInnerHTML={{__html: refresh}}></script>
-        <script dangerouslySetInnerHTML={{__html: `window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}`}}></script>
+        <script type="module" dangerouslySetInnerHTML={{ __html: refresh }}></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+              /</g,
+              '\\u003c'
+            )}`,
+          }}
+        ></script>
         <script type="module" src="./src/entry-client.tsx"></script>
       </body>
     </html>

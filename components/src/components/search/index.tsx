@@ -6,10 +6,13 @@ export const SearchBar: React.FC = () => {
   const [value, setValue] = useState('');
   const { search } = useSearchEvent({ setValue });
 
-  const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    search(value);
-  }, [search]);
+  const handleSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      search(value);
+    },
+    [search, value]
+  );
 
   return (
     <form onSubmit={handleSubmit}>

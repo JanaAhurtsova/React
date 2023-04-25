@@ -33,5 +33,5 @@ describe('CardList component', () => {
     await waitFor(() => result.current.isFetching === false);
     expect(result.current.isLoading).toBe(false);
     expect(result.current.data).toEqual(data);
-  })
+  });
 });

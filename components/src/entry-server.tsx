@@ -21,7 +21,6 @@ export const renderApp = async (url: string, opts?: RenderToPipeableStreamOption
     </Html>,
     opts
   );
-  
+
   return pipe;
 };
-
