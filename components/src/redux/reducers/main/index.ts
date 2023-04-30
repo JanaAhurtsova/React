@@ -1,6 +1,4 @@
-import * as toolkitRaw from '@reduxjs/toolkit';
-type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
-const { createSlice } = ((toolkitRaw as TypeToolkitRaw).default ?? toolkitRaw) as typeof toolkitRaw;
+import { TPayloadAction, createSlice } from '../../../managers/toolkit';
 import { ISearchState } from './type';
 import { NameReducer } from '../../../managers/reducers';
 
@@ -12,7 +10,7 @@ export const searchSlice = createSlice({
   name: NameReducer.SEARCH,
   initialState,
   reducers: {
-    search(state, action: toolkitRaw.PayloadAction<string>) {
+    search(state, action: TPayloadAction<string>) {
       state.searchValue = action.payload;
     },
   },

@@ -5,10 +5,14 @@ import { Provider } from 'react-redux';
 import { setupStore } from './redux/store';
 import { Html } from './html';
 import { cardsApi } from './redux/reducers/API';
+
 const store = setupStore({});
+async function getCards() {
+  await store.dispatch(cardsApi.endpoints.searchCards.initiate(''));
+}
 
 export const renderApp = async (url: string, opts?: RenderToPipeableStreamOptions) => {
-  await store.dispatch(cardsApi.endpoints.searchCards.initiate(''));
+  await getCards();
   const preloadedState = store.getState();
 
   const { pipe } = renderToPipeableStream(

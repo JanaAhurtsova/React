@@ -5,8 +5,8 @@ import { SetStateAction, useEffect, useCallback } from 'react';
 import ICardForm from '../../components/cardForm/type';
 import { addCard } from '../reducers/form';
 
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+const useAppDispatch = () => useDispatch<AppDispatch>();
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 interface ISearchDispatch {
   setValue: (value: SetStateAction<string>) => void;
@@ -35,4 +35,12 @@ export const useFormEvent = () => {
     },
     [dispatch]
   );
+};
+
+export const useGetSearchValue = () => {
+  return useAppSelector((state) => state.search.searchValue);
+};
+
+export const useGetCardsForm = () => {
+  return useAppSelector((state) => state.form.cards);
 };

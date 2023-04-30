@@ -1,6 +1,4 @@
-import * as toolkitRaw from '@reduxjs/toolkit';
-type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
-const { createSlice } = ((toolkitRaw as TypeToolkitRaw).default ?? toolkitRaw) as typeof toolkitRaw;
+import { TPayloadAction, createSlice } from '../../../managers/toolkit';
 import { NameReducer } from '../../../managers/reducers';
 import { IFormState } from './type';
 import ICardForm from '../../../components/cardForm/type';
@@ -13,7 +11,7 @@ export const formSlice = createSlice({
   name: NameReducer.FORM,
   initialState,
   reducers: {
-    addCard(state, action: toolkitRaw.PayloadAction<ICardForm>) {
+    addCard(state, action: TPayloadAction<ICardForm>) {
       state.cards.push(action.payload);
     },
   },

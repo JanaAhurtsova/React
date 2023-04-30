@@ -1,11 +1,7 @@
-import * as toolkitRaw from '@reduxjs/toolkit';
 import { cardsApi } from '../reducers/API';
 import searchReducer from '../reducers/main';
 import formReducer from '../reducers/form';
-
-type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
-const { configureStore, combineReducers } = ((toolkitRaw as TypeToolkitRaw).default ??
-  toolkitRaw) as typeof toolkitRaw;
+import { configureStore, combineReducers, TPreloadedState } from '../../managers/toolkit';
 
 export const rootReducer = combineReducers({
   [cardsApi.reducerPath]: cardsApi.reducer,
@@ -13,9 +9,7 @@ export const rootReducer = combineReducers({
   form: formReducer,
 });
 
-export const setupStore = (
-  preloadedState?: toolkitRaw.PreloadedState<ReturnType<typeof rootReducer>>
-) =>
+export const setupStore = (preloadedState?: TPreloadedState<ReturnType<typeof rootReducer>>) =>
   configureStore({
     reducer: rootReducer,
     preloadedState,

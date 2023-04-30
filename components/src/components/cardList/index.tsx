@@ -3,10 +3,10 @@ import { Card } from '../card';
 import style from './style.module.scss';
 import { Loader } from '../loader';
 import { useSearchCardsQuery } from '../../redux/reducers/API';
-import { useAppSelector } from '../../redux/hooks';
+import { useGetSearchValue } from '../../redux/hooks';
 
 export const CardList: React.FC = () => {
-  const searchValue = useAppSelector((state) => state.search.searchValue);
+  const searchValue = useGetSearchValue();
   const [value, setValue] = useState('');
   const { data = [], isError, isFetching } = useSearchCardsQuery(value);
 
