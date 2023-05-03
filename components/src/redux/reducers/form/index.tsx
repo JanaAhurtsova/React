@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { TPayloadAction, createSlice } from '../../../managers/toolkit';
 import { NameReducer } from '../../../managers/reducers';
 import { IFormState } from './type';
 import ICardForm from '../../../components/cardForm/type';
@@ -11,7 +11,7 @@ export const formSlice = createSlice({
   name: NameReducer.FORM,
   initialState,
   reducers: {
-    addCard(state, action: PayloadAction<ICardForm>) {
+    addCard(state, action: TPayloadAction<ICardForm>) {
       state.cards.push(action.payload);
     },
   },

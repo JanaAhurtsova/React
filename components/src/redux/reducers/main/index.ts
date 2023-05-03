@@ -1,8 +1,8 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { TPayloadAction, createSlice } from '../../../managers/toolkit';
 import { ISearchState } from './type';
 import { NameReducer } from '../../../managers/reducers';
 
-const initialState: ISearchState = {
+export const initialState: ISearchState = {
   searchValue: '',
 };
 
@@ -10,7 +10,7 @@ export const searchSlice = createSlice({
   name: NameReducer.SEARCH,
   initialState,
   reducers: {
-    search(state, action: PayloadAction<string>) {
+    search(state, action: TPayloadAction<string>) {
       state.searchValue = action.payload;
     },
   },
