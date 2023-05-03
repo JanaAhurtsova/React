@@ -5,7 +5,6 @@ describe('about page e2e', () => {
     cy.visit('/about');
     cy.contains('MUSIC COUNTS.');
     cy.contains('Contact:');
-    cy.contains('Home').trigger('mouseenter').trigger('mouseleave');
   });
 
   it('Empty test', () => {

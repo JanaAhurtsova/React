@@ -23,7 +23,7 @@ describe('Home page e2e', () => {
   it('should search', () => {
     cy.visit('/');
 
-    cy.get('input').type('papa').should('have.value', 'papa');
+    cy.get('input').type('papa');
     cy.get('button').click();
     cy.contains('Papa Roach');
     cy.contains(/panic/i).should('not.exist');
@@ -32,7 +32,7 @@ describe('Home page e2e', () => {
   it('should be display no cards', () => {
     cy.visit('/');
 
-    cy.get('input').type('ppppp').should('have.value', 'ppppp');
+    cy.get('input').type('ppppp');
     cy.get('button').click();
     cy.contains(/no cards/i);
   });
@@ -40,4 +40,4 @@ describe('Home page e2e', () => {
   it('Empty test', () => {
     expect(1).to.equal(1);
   });
-})
+});

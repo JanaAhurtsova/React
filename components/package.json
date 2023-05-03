@@ -7,7 +7,7 @@
     "start": "ts-node server",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint-fix": "npx eslint --ext js,jsx,ts,tsx --fix",
+    "lint-fix": "npx eslint --ext js,jsx,ts,tsx . --fix",
     "test:vi": "vitest run --coverage",
     "test:clean": "npx rimraf coverage && npx rimraf .nyc_output",
     "cy:open": "cypress open --e2e --browser chrome",

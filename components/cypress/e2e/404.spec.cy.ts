@@ -12,4 +12,4 @@ describe('404 page e2e', () => {
   it('Empty test', () => {
     expect(1).to.equal(1);
   });
-})
+});

@@ -9,7 +9,7 @@ describe('form e2e', () => {
     cy.contains('Singer');
   });
 
-  it('should be display errors', ()=> {
+  it('should be display errors', () => {
     cy.visit('/form');
 
     cy.get('form').submit();
@@ -18,7 +18,7 @@ describe('form e2e', () => {
     cy.contains('*Information must be confirm');
   });
 
-  it('should reset all values', ()=> {
+  it('should reset all values', () => {
     cy.visit('/form');
 
     cy.get('input[type=text]').type('blabla');
@@ -43,7 +43,7 @@ describe('form e2e', () => {
 
     cy.contains(/not yet come/);
     cy.contains(/file isn't an image/);
-  })
+  });
 
   it('should create a card', () => {
     cy.visit('/form');
@@ -59,7 +59,7 @@ describe('form e2e', () => {
 
     cy.contains(/successfully/i);
     cy.contains('Band: blabla');
-  })
+  });
 
   it('Empty test', () => {
     expect(1).to.equal(1);
