@@ -1,0 +1,15 @@
+export const Genres = [
+  'Choose a Genre',
+  'Rock',
+  'Pop',
+  'Punk',
+  'Jazz',
+  'Classic',
+  'Country',
+  'Hip Hop',
+  'Metal',
+  'Electronic',
+  'Blues',
+  'Techno',
+  'Reggae',
+];

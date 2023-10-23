@@ -1,0 +1,50 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.loader__wrapper {
+  width: 100%;
+}
+
+.loader {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: .6rem;
+  position: absolute;
+  border-radius: .4rem;
+  bottom: 0;
+  background: linear-gradient(to bottom, #535bf2, #65b4e9);
+}
+
+.line1 {
+  left: 0;
+  animation: dance 0.5s ease alternate infinite;
+}
+
+.line2 {
+  left: 23px;
+  animation: dance 0.5s 0.2s ease alternate infinite;
+}
+
+.line3 {
+  left: 46px;
+  animation: dance 0.5s 0.4s ease alternate infinite;
+}
+
+@keyframes dance {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 85%;
+  }
+}

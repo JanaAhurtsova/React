@@ -1,0 +1,25 @@
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  width: 20rem;
+  height: 10rem;
+  background-color: #ffffff;
+  color: #069f10;
+  border-radius: .5rem;
+}
+
+.message {
+  text-align: center;
+}
