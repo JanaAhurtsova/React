@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "esnext", "dom.iterable"],
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "resolveJsonModule": true,
+    "types": ["vitest/globals"]
+  },
+  "include": ["./src/**/*", "styled.d.ts", "vite.config.ts", ".eslintrc.json"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -1,0 +1,15 @@
+.confirm {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  width: .7rem;
+  height: .7rem;
+  margin-right: .5rem;
+}
+
+.checkbox__label {
+  font-size: .8rem;
+  color: #b1b0b0
+}
